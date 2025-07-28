@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	{% block head %}
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="google-site-verification" content="K2M6iwAJWCMVnbhBSluI3S0gL7BhH4inL5BolVSldjg" />
+	<title>
+		{% if page.route == '/' %}
+		Aksesibel | Pengetahuan Akses untuk Semua
+		{% else %}
+		{{ page.title }} | Aksesibel
+		{% endif %}
+	</title>
+	<meta name="theme-color" content="#0F6B33">
+	<meta name="description" content="{{ header.metadata.description|default(site.metadata.description) }}" />
+	<meta name="keywords" content="aksesibilitas, disabilitas, belajar aksesibilitas" />
+	<meta property="og:site_name" content="radikal studio" />
+	<meta property="og:title" content="{% if page.route == '/' %}Aksesibel | Pengetahuan Akses untuk Semua{% else %}{{ page.title }} | Aksesibel{% endif %}" />
+	<meta property="og:description" content="{{ header.metadata.description|default(site.metadata.description) }}" />
+	<meta property="og:url" content="{{ uri.url(true) }}" />
+	<meta property="og:type" content="website" />
+	<meta property="article:publisher" content="https://radikal.id" />
+	{% set cover_image_name = page.header.cover_image|keys|first %}
+	{% if cover_image_name and page.media[cover_image_name] %}
+	<meta property="og:image" content="{{ page.media[cover_image_name].url|e }}" />
+	<meta property="twitter:image" content="{{ page.media[cover_image_name].url|e }}" />
+	{% else %}
+	<meta property="og:image" content="{{ theme_url }}/cover.webp" />
+	<meta property="twitter:image" content="{{ theme_url }}/cover.png" />
+	{% endif %}
+	<meta property="og:logo" content="{{ theme_url }}/images/logo.png" />
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:site" content="@rifatnajmi" />
+	<link rel="icon" href="{{ theme_url }}/images/favicon.svg" sizes="192x192" />
+	<link rel="apple-touch-icon" href="{{ theme_url }}/images/favicon.svg" />
+	<meta name="msapplication-TileImage" content="{{ theme_url }}/images/favicon.svg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		{% block stylesheets %}
+			{% do assets.addCss('theme://assets/bs/css/bootstrap.min.css') %}
+			{% do assets.addCss('theme://assets/fa/css/fontawesome.min.css') %}
+			{% do assets.addCss('theme://assets/fa/css/light.min.css') %}
+			{% do assets.addCss('theme://assets/fa/css/brands.min.css') %}
+			{% do assets.addCss('theme://assets/fa/css/custom-icons.min.css') %}
+			{% do assets.addCss('theme://css/cookies.css') %}
+			{% do assets.addCss('theme://css/style.css') %}
+			{{ assets.css()|raw }}
+		{% endblock %}
+		{% block javascripts %}
+			{% do assets.addJs('jquery', {loading: 'defer'}) %}
+			{% do assets.addJs('theme://assets/bs/js/bootstrap.bundle.min.js', { group: 'bottom', loading: 'defer' }) %}
+			{% do assets.addJs('theme://js/color-mode.js') %}
+			{% do assets.addJs('theme://js/anchor.min.js', { group: 'toc', loading: 'defer' }) %}
+			{% do assets.addJs('theme://js/toc.js', { group: 'toc', loading: 'defer' }) %}
+			{% do assets.addJs('theme://js/quizList.js', { group: 'quizlist', loading: 'defer' }) %}
+			{% do assets.addJs('theme://js/quiz.js', { group: 'quiz', loading: 'defer' }) %}
+			{% do assets.addJs('theme://js/quizProgress.js', { group: 'quizprogress', loading: 'defer' }) %}
+			{% do assets.addJs('theme://js/tooltip.js', { group: 'bottom', loading: 'defer' }) %}
+			{{ assets.js()|raw }}
+		{% endblock %}
+	{% endblock %}
+	{% if page.template == 'home' %}
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebSite",
+			"url": "https://aksesibel.id",
+			"name": "Aksesibel",
+			"description": "{{ site.metadata.description }}",
+			"creator": {
+				"@type": "Person",
+				"name": "Rifat Najmi",
+				"url": "https://rifatnajmi.com",
+				"sameAs": "https://instagram.com/rifatnajmi"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "radikal studio",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "{{ theme_url }}/images/logo-publisher.png"
+				}
+			},
+			"keywords": "aksesibilitas, WCAG, WCAG Indonesia, panduan wcag, panduan wcag indonesia, wcag indonesia, accessibility, aksesibel, studio desain, design studio"
+		}
+	</script>
+	
+	{% elseif page.template in ['item-01-modul', 'item-02-bagian', 'item-03-topik'] %}
+	
+	<script type="application/ld+json">
+		{% set authors_ids = page.header.authors is iterable ? page.header.authors : [page.header.authors] %}
+		{% set authors_data = [] %}
+		{% for id in authors_ids %}
+			{% set author = grav.config.authors[id] %}
+			{% if author %}
+				{% set author_item = {
+					"@type": "Person",
+					"name": author.name,
+					"url": base_url_absolute ~ '/kontributor#' ~ id
+				} %}
+			{% set authors_data = authors_data|merge([author_item]) %}
+			{% endif %}
+		{% endfor %}	
+		{
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": "{{ page.title }}",
+			"datePublished": "{{ page.date|date("Y-m-d") }}",
+			"dateModified": "{{ page.last_modified|date("Y-m-d") }}",
+			"author": {{ authors_data|json_encode(constant('JSON_PRETTY_PRINT') b-or constant('JSON_UNESCAPED_SLASHES'))|raw }},
+			"publisher": {
+				"@type": "Organization",
+    			"name": "radikal studio",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "{{ base_url_absolute }}/user/images/logo-publisher.png"
+				}
+			}
+		}
+	</script>
+
+	{% else %}
+
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebPage",
+			"url": "{{ page.url }}",
+			"mainEntityOfPage": "https://radikal.id",
+			"headline": "{{ page.title }}",
+			"description": "{{ header.metadata.description }}",
+			"publisher": {
+				"@type": "Organization",
+				"name": "radikal studio",
+				"url": "https://radikal.id",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "{{ theme_url }}/images/logo-publisher.png"
+				}
+			},
+			"author": {
+				"@type": "Person",
+				"name": "Rifat Najmi",
+				"url": "https://rifatnajmi.com"
+			},
+			"keywords": "aksesibilitas, WCAG, WCAG Indonesia, panduan wcag, panduan wcag indonesia, wcag indonesia, accessibility, aksesibel, studio desain, design studio"
+		}
+
+	</script>
+	{% endif %}
+	<script defer src="https://cloud.umami.is/script.js" data-website-id="b15d0ed3-055c-43ef-899a-0fe1d07f77b4"></script>
+</head>
+{% set body_classes = [page.template] %}
+
+{% if page.parent and page.parent.template == 'blog' %}
+	{% set body_classes = body_classes|merge(['blog-item']) %}
+{% endif %}
+
+{% if grav.language.getActive %}
+	{% set body_classes = body_classes|merge(['lang-' ~ grav.language.getActive]) %}
+{% endif %}
+
+<body class="{{ body_classes|join(' ') }} main">
+	<div id="atas"></div>
+	<a href="#utama" class="skip-link">Lompat ke konten utama</a>
+
+	{% include 'partials/header.html.twig' %}
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			{% block content %}
+				{{ page.content }}
+			{% endblock %}
+		</div>
+	</div>
+	{% include 'partials/footer.html.twig' %}
+	{% block bottom %}
+		{{ assets.js('bottom')|raw }}
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+{# Ambil semua grandparent yang visible (anak-anak dari root) #}
+{% set allGrandparents = page.parent.children.visible %}
+
+{# Tentukan prev dan next sibling #}
+{% set prevSibling = page.nextSibling() %}
+{% set nextSibling = page.prevSibling() %}
+
+{# Jika punya child visible, next = child pertama #}
+{% set next = page.children.visible|first ?: (nextSibling ?: allGrandparents|first) %}
+
+{# Jika tidak ada prevSibling, wrap ke terakhir #}
+{% set prev = prevSibling ?: allGrandparents|last %}
+
+<ul class="row prevnext justify-content-between list-unstyled">
+  <li class="col-6 text-left">
+
+  </li>
+  <li class="col-6 text-right">
+    {% if next %}
+      <a href="{{ next.url }}" class="nowrap next rounded">
+        <span class="truncate">{{ next.title }}</span>
+        <i class="fal fa-chevron-right" aria-hidden="true"></i>
+      </a>
+    {% endif %}
+  </li>
+</ul>

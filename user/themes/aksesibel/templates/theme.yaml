@@ -1,0 +1,15 @@
+name: WCAG
+slug: wcag
+type: theme
+version: 1.0
+description: "Templat utama untuk Panduan WCAG Indonesia"
+icon: empire
+author:
+  name: Rifat Najmi
+  email: info@rifatnajmi.com
+  url: https://rifatnajmi.com
+homepage: https://rifatnajmi.com
+demo: https://panduanwcag.com
+keywords: WCAG, html5, css3
+bugs: https://panduanwcag.com
+license: Copyright Rifat Najmi

@@ -1,0 +1,55 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+{% include 'partials/sidebar.html.twig' %}
+<main class="col-lg-9 col-xl-8">
+	<nav class="post-navigation justify-content-between mb-1" style="--bs-breadcrumb-divider: '/';" aria-label="Breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="{{ base_url }}">Beranda</a></li>
+			{% if page.parent and page.parent.parent %}
+			{% set grandparent = page.parent.parent %}
+			{% if grandparent.title and grandparent.title != 'Pages' %}
+			<li class="breadcrumb-item"><a href="{{ grandparent.url }}">{{ grandparent.title }}</a></li>
+			{% endif %}
+			{% endif %}
+			{% if page.parent %}
+			{% set parent = page.parent %}
+			{% if parent.title and parent.title != 'Pages' %}
+			<li class="breadcrumb-item"><a href="{{ parent.url }}">{{ parent.title }}</a></li>
+			{% endif %}
+			{% endif %}
+			<li class="breadcrumb-item visually-hidden" aria-current="page">{{ page.title }}</li>
+		</ol>
+
+	</nav>
+	<article id="utama" class="row justify-content-center">
+		<header class="col-md-12">
+			<h1 class="post-title">
+				{{ page.title }}
+			</h1>
+			<p class="lead">{{ page.header.metadata.description }}</p>
+
+		</header>
+		<section class="post-content col-md-12 content">
+			<div id="quiz-container">
+			</div>
+			<script>
+   const quizData = {{ page.header.questions|json_encode|raw }};
+</script>
+		</section>
+
+
+	</article>
+	{% include 'partials/prevnext-03-topik.html.twig' %}
+</main>
+<div class="d-none d-xl-block col-xl-2">
+
+</div>
+{% block quizlist %}
+  {{ assets.js('quizlist')|raw }}
+{% endblock %}
+
+{% block quiz %}
+  {{ assets.js('quiz')|raw }}
+{% endblock %}
+
+{% endblock %}

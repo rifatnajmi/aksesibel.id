@@ -1,0 +1,31 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+asasas
+<main class="col-lg-9 col-xl-8">
+    <header class="row justify-content-center">
+		<div class="col">
+				<h1 class="post-title mt-0">
+				Cari
+			</h1> <div class="bg-ui-100" style="padding:1em; border-radius:1em">{% include 'partials/searchbox.html.twig' %} </div>
+		</div>
+	</header>
+	<section class="row simplesearch">
+		<div class="col-12 mb-4">
+            {% if query %}
+                {% set count = search_results ? search_results.count : 0 %}
+                {% if count is same as( 1 ) %}
+                    <h2>{{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_SINGULAR"|t(query|e)|raw }}</h2>
+                {% else %}
+                    <h2>{{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_PLURAL"|t(query|e, count)|raw }}</h2>
+                {% endif %}
+            {% endif %}
+         </div>
+		<div class="col-12">
+			<ul class="row card-list"> {% for page in search_results %} {% include 'partials/searchresult.html.twig' with {'page': page} %} {% endfor %} </ul>
+		</div>
+	</section>
+</main>
+<div class="d-none d-xl-block col-xl-2">
+
+</div>
+{% endblock %}

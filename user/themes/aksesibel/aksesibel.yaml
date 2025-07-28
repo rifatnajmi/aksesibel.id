@@ -1,0 +1,10 @@
+name: aksesibel
+version: 1.0.0
+description: Aksesibel
+icon: empire
+author:
+  name: Rifat Najmi
+  email: info@rifatnajmi.com
+license: Copyright Rifat Najmi
+form:
+  validation: loose

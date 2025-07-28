@@ -1,0 +1,84 @@
+<aside class="d-none d-lg-block col-lg-3 col-xl-2" data-bs-theme="dark">
+	{% set current = page.route %}
+	<nav class="sticky-top" id="sidebar">
+		<ul class="list-unstyled">
+			<li class="menu-green">
+				<i class="fal fa-home fa-fw" aria-hidden="true"></i><a href="{{ base_url }}/" {% if page.template == 'home' %}class="active" {% endif %}>Beranda</a>
+			</li>
+			<li class="menu-green">
+				<i class="fal fa-hand-wave fa-fw" aria-hidden="true"></i><a href="{{ base_url }}/pengantar" {% if page.route == '/pengantar' %}class="active" {% endif %}>Pengantar</a>
+			</li>
+			<li class="menu-purple">
+				<i class="fal fa-wheelchair fa-fw" aria-hidden="true"></i><a href="{{ base_url }}/disabilitas" {% if page.route == '/disabilitas' %}class="active" {% endif %}>Disabilitas</a>
+				{% set disabilitas = pages.find('/disabilitas') %}
+				<ul class="list-unstyled">
+					{% for child in disabilitas.children.visible %}
+					{% set is_active = (page.url == child.url) or (page.url[:child.url|length] == child.url) %}
+					<li>
+						<a href="{{ child.url }}" class="nowrap {% if is_active %}active{% endif %}" {% if child.header.quiz_id is defined %}data-quiz-id="{{ child.header.quiz_id }}" {% endif %}>
+							<span class="truncate">{{ child.menu }}</span>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</li>
+
+			<li class="menu-pink">
+				<i class="fal fa-universal-access fa-fw" aria-hidden="true"></i><a href="{{ base_url }}/aksesibilitas" {% if page.route == '/aksesibilitas' %}class="active" {% endif %}>Aksesibilitas</a>
+				{% set aksesibilitas = pages.find('/aksesibilitas') %}
+				<ul class="list-unstyled">
+					{% for child in aksesibilitas.children.visible %}
+					{% set is_active = (page.url == child.url) or (page.url[:child.url|length] == child.url) %}
+					<li>
+						<a href="{{ child.url }}" class="nowrap {% if is_active %}active{% endif %}" {% if child.header.quiz_id is defined %}data-quiz-id="{{ child.header.quiz_id }}" {% endif %}>
+							<span class="truncate">{{ child.menu }}</span>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</li>
+
+			<li class="menu-yellow">
+				<i class="fal fa-gavel fa-fw" aria-hidden="true"></i><a href="{{ base_url }}/regulasi" {% if page.route == '/regulasi' %}class="active" {% endif %}>Regulasi</a>
+				{% set regulasi = pages.find('/regulasi') %}
+				<ul class="list-unstyled">
+					{% for child in regulasi.children.visible %}
+					{% set is_active = (page.url == child.url) or (page.url[:child.url|length] == child.url) %}
+					<li>
+						<a href="{{ child.url }}" class="nowrap {% if is_active %}active{% endif %}" {% if child.header.quiz_id is defined %}data-quiz-id="{{ child.header.quiz_id }}" {% endif %}>
+							<span class="truncate">{{ child.menu }}</span>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</li>
+			<li class="menu-blue">
+				<i class="fal fa-clipboard-list-check fa-fw" aria-hidden="true"></i><a href="{{ base_url }}/standar" {% if page.route == '/standar' %}class="active" {% endif %}>Standar</a>
+				{% set standar = pages.find('/standar') %}
+				<ul class="list-unstyled">
+					{% for child in standar.children.visible %}
+					{% set is_active = (page.url == child.url) or (page.url[:child.url|length] == child.url) %}
+					<li>
+						<a href="{{ child.url }}" class="nowrap {% if is_active %}active{% endif %}" {% if child.header.quiz_id is defined %}data-quiz-id="{{ child.header.quiz_id }}" {% endif %}>
+							<span class="truncate">{{ child.menu }}</span>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</li>
+
+			<li class="menu-green">
+				<i class="fal fa-block-question fa-fw" aria-hidden="true"></i><a href="{{ base_url }}/kuis" {% if page.route == '/kuis' %}class="active" {% endif %}>Kuis</a>
+			</li>
+
+			<li class="menu-green">
+				<i class="fal fa-font-case fa-fw" aria-hidden="true"></i><a href="{{ base_url }}/glosarium" {% if page.route == '/glosarium' %}class="active" {% endif %}>Glosarium</a>
+			</li>
+
+		</ul>
+	</nav>
+
+</aside>
+
+<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-quiz-id]').forEach(function(e){const quizId=e.getAttribute('data-quiz-id');const isCompleted=localStorage.getItem(`${quizId}_completed`)==='1';if(isCompleted){const icon=document.createElement('i');icon.className='fal fa-check';e.appendChild(icon)}})});</script>
+

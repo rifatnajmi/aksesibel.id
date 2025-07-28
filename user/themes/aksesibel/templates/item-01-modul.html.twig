@@ -1,0 +1,45 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+{% include 'partials/sidebar.html.twig' %}
+<main class="col-lg-9 col-xl-8">
+	<nav class="post-navigation justify-content-between mb-1" style="--bs-breadcrumb-divider: '/';" aria-label="Breadcrumb">
+		<ol class="breadcrumb breadcrumb-real">
+			<li class="breadcrumb-item"><a href="{{ base_url }}">Beranda</a></li>
+			<li class="breadcrumb-item visually-hidden" aria-current="page">{{ page.title }}</li>
+		</ol>
+	</nav>
+	<article id="utama" class="row justify-content-center h-100">
+		<header class="col-md-12">
+			<h1 class="post-title">
+				{{ page.title }}
+			</h1>
+			<p class="lead">{{ page.header.metadata.description }}</p>
+			{% include 'partials/post-meta.html.twig' %}
+		</header>
+		<section class="post-content col-md-12 content">
+			{{ page.content|markdown }}
+
+			{% if page.children.count > 0 %}
+			<h2>Topik pada modul ini</h2>
+			<ul class="list-unstyled card-list">
+				{% for child in page.children.visible %}
+				<li>
+					<a href="{{ child.url }}">
+						<div class="card">
+							<h3>{{ child.menu }}</h3>
+							{{ child.header.metadata.description }}
+						</div>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+			{% endif %}
+			{% include 'partials/post-author.html.twig' %}
+		</section>
+	</article>
+</main>
+<div class="d-none d-xl-block col-xl-2">
+
+</div>
+{% endblock %}

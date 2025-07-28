@@ -1,0 +1,31 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+{% include 'partials/sidebar.html.twig' %}
+<main class="col-lg-9 col-xl-8">
+	<nav class="post-navigation justify-content-between mb-1" style="--bs-breadcrumb-divider: '/';" aria-label="Breadcrumb">
+		<ol class="breadcrumb breadcrumb-real">
+			<li class="breadcrumb-item"><a href="{{ base_url }}">Beranda</a></li>
+			<li class="breadcrumb-item visually-hidden" aria-current="page">{{ page.title }}</li>
+		</ol>
+	</nav>
+	<article id="utama" class="row justify-content-center">
+		<header class="col-md-12">
+			<h1 class="post-title">
+				{{ page.title }}
+			</h1>
+			<p class="lead">{{ page.header.metadata.description }}</p>
+			{% include 'partials/post-meta.html.twig' %}
+		</header>
+		<section class="post-content col-md-12 content">
+			<h2>Halaman ini masih dalam pengembangan</h2>
+			<p>Ikuti <a href="https://instagram.com/aksesibel.id"><i class="fab fa-instagram" aria-hidden="true"></i> @aksesibel.id</a> di Instagram untuk mendapatkan informasi terkini mengenai perkembangan situs web ini.</p>
+			<a href="https://aksesibel.id/"><i class="fal fa-arrow-left" aria-hidden="true"></i> Kembali ke Beranda</a>
+		</section>
+	</article>
+</main>
+
+
+<div class="d-none d-xl-block col-xl-2">
+
+</div>
+{% endblock %}

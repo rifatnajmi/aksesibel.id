@@ -1,0 +1,29 @@
+<!--
+<div class="row post-author">
+	<hr>
+	<h2>Kontributor</h2>
+	{% set authors_data = grav.config.get('authors') %}
+	{% set authors = page.header.authors is iterable ? page.header.authors : [page.header.authors] %}
+
+	{% for id in authors %}
+		{% set author = authors_data[id] ?? null %}
+		{% if author %}
+			<div class="col-md-4" id="author-{{ id }}">
+				<div class="card">
+					<div class="card-body">
+						<img src="{{ theme_url ~ '/author/' ~ author.avatar }}" alt="" class="circle mb-1" width="33%" height="auto">
+						<h3 class="h4">{{ author.name }}</h3>
+						<p>{{ author.bio }}</p>
+					</div>
+					<div class="card-footer">
+						{% if author.linkedin %}<a href="{{ author.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>{% endif %}
+						{% if author.instagram %}<a href="https://instagram.com/{{ author.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>{% endif %}
+						{% if author.twitter %}<a href="https://x.com/{{ author.twitter }}" target="_blank"><i class="fab fa-x-twitter"></i></a>{% endif %}
+						
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
+-->

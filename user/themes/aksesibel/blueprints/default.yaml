@@ -1,0 +1,32 @@
+title: Default
+
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            content:
+              type: editor
+              label: Page Content
+              validate:
+                type: textarea
+              
+            header.fa:
+              type: text
+              label: Page Icon
+              help: Font Awesome.
+
+        options:
+          type: tab
+          title: Options

@@ -1,0 +1,15 @@
+enabled: false
+include-css: false
+authors:
+  -
+    name: 'Rifat Najmi'
+    label: rifat
+    description: null
+    person-facebook-url: null
+    person-twitter-user: rifatnajmi
+    person-instagram-url: 'https://instagram.com/rifatnajmi'
+    person-linkedin-url: 'https://linkedin.com/in/rifatnajmi'
+    person-pinterest-url: null
+    person-youtube-url: null
+    person-website-url: 'https://rifatnajmi.com'
+    image: {  }

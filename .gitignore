@@ -1,0 +1,8 @@
+cache/
+logs/
+tmp/
+backup/
+user/accounts/
+.DS_Store
+Thumbs.db
+*.zip

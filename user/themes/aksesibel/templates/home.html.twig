@@ -1,0 +1,138 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+{% include 'partials/sidebar.html.twig' %}
+<main class="col-lg-9 col-xl-8">
+	<article class="row justify-content-center">
+		<header class="col-md-12">
+			<h1 class="post-title">
+				{{ page.title }}
+			</h1>
+			<p class="lead mb-1 mt-1">{{ page.header.metadata.description }}</p>
+			<p class="lead mb-1 mt-1">Situs web ini masih dalam tahap pengembangan.</p>
+			<a class="btn btn-primary" href="#utama">Mulai belajar</a>
+		</header>
+		<hr class="mt-2 mb-2">
+		<section id="utama" class="content post-content col-md-12">
+			<h2 class="mt-0">Modul</h2>
+			<div class="row card-list">
+				<div class="col-md-6">
+					<a href="{{ base_url }}/pengantar">
+						<div class="card h-100">
+							<div class="card-header menu-green">
+								<i class="fal fa-hand-wave"></i>
+								<h3>Pengantar</h3>
+							</div>
+							<p class="card-body">
+								Modul ini membahas makna akses dalam berbagai konteks untuk membangun kesadaran yang lebih luas.
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<a href="{{ base_url }}/disabilitas">
+						<div class="card h-100">
+							<div class="card-header menu-pink">
+								<i class="fal fa-wheelchair"></i>
+								<h3>Disabilitas</h3>
+							</div>
+							<p class="card-body">
+								Pelajari berbagai model dan ragam disabilitas, serta panduan etika dalam berinteraksi dengan individu dengan disabilitas.
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<a href="{{ base_url }}/aksesibilitas">
+						<div class="card h-100">
+							<div class="card-header menu-purple">
+								<i class="fal fa-universal-access"></i>
+								<h3>Aksesibilitas</h3>
+							</div>
+							<p class="card-body">
+								Pelajari dasar-dasar aksesibilitas seperti pendekatan user centered design hingga universal design.
+							</p>
+							 <div class="card-footer"><span class="badge text-bg-secondary">Dalam pengembangan</span></div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<a href="{{ base_url }}/regulasi">
+						<div class="card h-100">
+							<div class="card-header menu-yellow">
+								<i class="fal fa-gavel"></i>
+								<h3>Regulasi</h3>
+							</div>
+							<p class="card-body">
+								Pahami regulasi dan kebijakan terkait aksesibilitas di tingkat global, regional, dan nasional.
+							</p>
+							 <div class="card-footer"><span class="badge text-bg-secondary">Dalam pengembangan</span></div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<a href="{{ base_url }}/standar">
+						<div class="card h-100">
+							<div class="card-header menu-blue">
+								<i class="fal fa-clipboard-list-check"></i>
+								<h3>Standar</h3>
+							</div>
+							<p class="card-body">
+								Telusuri standar internasional yang menjadi panduan teknis dalam membangun produk yang inklusif.
+							</p>
+							 <div class="card-footer"><span class="badge text-bg-secondary">Dalam pengembangan</span></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<hr>
+			<h2>Cara belajar lainnya</h2>
+			<div class="row card-list">
+				<div class="col-md-6">
+					<a href="{{ base_url }}/kuis">
+						<div class="card h-100">
+							<div class="card-header menu-green">
+								<i class="fal fa-block-question"></i>
+								<h3>Kuis</h3>
+							</div>
+							<p class="card-body">
+								Uji pemahamanmu mengenai konsep disabilitas dan aksesibiltas dengan mengikuti beberapa kuis yang tersedia.
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<a href="{{ base_url }}/glosarium">
+						<div class="card h-100">
+							<div class="card-header menu-green">
+								<i class="fal fa-font-case"></i>
+								<h3>Glosarium</h3>
+							</div>
+							<p class="card-body">
+								Temukan definisi istilah penting seputar disabilitas, aksesibilitas digital, regulasi, dan standar internasional seperti WCAG.
+							</p>
+							 <div class="card-footer"><span class="badge text-bg-secondary">Dalam pengembangan</span></div>
+						</div>
+					</a>
+				</div>
+				<div class="col-12">
+					<a href="https://panduanwcag.com">
+						<div class="card h-100">
+							<div class="card-header menu-blue">
+								<i class="fa-kit fa-wcag"></i>
+								<h3>Panduan WCAG Indonesia</h3>
+							</div>
+							<p class="card-body">
+								Pelajari WCAG melalui panduan dalam bahasa Indonesia sederhana. Disertai dengan simulasi untuk membantumu menemukan kriteria yang sesuai.
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+	</article>
+</main>
+<div class="d-none d-xl-block col-xl-2">
+
+</div>
+
+{% endblock %}

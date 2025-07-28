@@ -1,0 +1,34 @@
+.fak.fa-aksesibel, .fa-kit.fa-aksesibel { --fa: "\e00a"; --fa--fa: "\e00a\e00a"; }
+.fak.fa-gumroad, .fa-kit.fa-gumroad { --fa: "\e002"; --fa--fa: "\e002\e002"; }
+.fak.fa-radikal, .fa-kit.fa-radikal { --fa: "\e008"; --fa--fa: "\e008\e008"; }
+.fak.fa-rn, .fa-kit.fa-rn { --fa: "\e000"; --fa--fa: "\e000\e000"; }
+.fak.fa-saweria, .fa-kit.fa-saweria { --fa: "\e001"; --fa--fa: "\e001\e001"; }
+.fak.fa-trakteer, .fa-kit.fa-trakteer { --fa: "\e003"; --fa--fa: "\e003\e003"; }
+.fak.fa-wcag, .fa-kit.fa-wcag { --fa: "\e009"; --fa--fa: "\e009\e009"; }
+.fak.fa-wcag-a, .fa-kit.fa-wcag-a { --fa: "\e006"; --fa--fa: "\e006\e006"; }
+.fak.fa-wcag-c, .fa-kit.fa-wcag-c { --fa: "\e005"; --fa--fa: "\e005\e005"; }
+.fak.fa-wcag-g, .fa-kit.fa-wcag-g { --fa: "\e007"; --fa--fa: "\e007\e007"; }
+.fak.fa-wcag-w, .fa-kit.fa-wcag-w { --fa: "\e004"; --fa--fa: "\e004\e004"; }
+
+.fak, .fa-kit {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: var(--fa-display, inline-block);
+  font-family: "Font Awesome Kit";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+.fak::before, .fa-kit::before {
+  content: var(--fa);
+}
+
+@font-face {
+  font-family: "Font Awesome Kit";
+  font-style: normal;
+  font-display: block;
+  src: url("../webfonts/custom-icons.woff2") format("woff2"), url("../webfonts/custom-icons.ttf") format("truetype");
+}

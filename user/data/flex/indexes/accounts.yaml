@@ -1,0 +1,14 @@
+version: '1.2'
+timestamp: 1752983156
+count: 2
+index:
+  radikal:
+    storage_key: radikal
+    storage_timestamp: 1752983156
+    key: radikal
+    email: rifat@radikal.id
+  rifatnajmi:
+    storage_key: rifatnajmi
+    storage_timestamp: 1749378680
+    key: rifatnajmi
+    email: info@rifatnajmi.com

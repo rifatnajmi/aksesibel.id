@@ -1,0 +1,118 @@
+<header class="navbar navbar-expand navbar-dark fixed-top" aria-label="Navigasi Atas">
+	<nav class="container-fluid">
+		<a class="navbar-brand rounded" href="{{ base_url }}/"> <img src="{{ theme_url }}/images/logo.svg" alt="Aksesibel"> </a>
+		<ul class="navbar-nav justify-content-end flex-row flex-wrap flex-grow-1"> {% set current = page.route %}
+			<li class="nav-item d-none d-xl-block">
+				<a href="{{ base_url }}/tentang" class="nav-link {% if current starts with '/tentang' %}active{% endif %}">Tentang</a>
+			</li>
+			<li class="nav-item d-none d-xl-block">
+				<a href="{{ base_url }}/kontributor" class="nav-link {% if current starts with '/kontributor' %}active{% endif %}">Kontributor</a>
+			</li>
+			<li class="nav-item d-none d-xl-block">
+				<a href="{{ base_url }}/lisensi" class="nav-link {% if current starts with '/lisensi' %}active{% endif %}">Lisensi</a>
+			</li>
+			
+			<li class="nav-item py-2 py-lg-1">
+				<div class="vr d-none d-xl-flex h-100 mx-lg-2 text-white"></div>
+			</li>
+			
+			<li class="nav-item"><a class="nav-link {% if current starts with '/cari' %}active{% endif %}" href="{{ base_url }}/cari"><i class="fal fa-search" aria-hidden="true"></i><span class="sr-only">Cari</span></a></li>
+			
+			<li class="nav-item dropdown">
+				<button class="nav-link dropdown-toggle btn btn-link" id="color-modes" data-bs-toggle="dropdown" aria-expanded="false">
+					<i id="theme-icon" class="fal fa-eclipse fa-fw" aria-hidden="true"></i>
+					<span class="sr-only">Mode Warna</span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-end color-toggle" aria-labelledby="color-modes">
+					<li class="nav-item">
+						<button class="nav-link" data-theme="light" aria-pressed="false">
+							<i class="fal fa-sun fa-fw fa-lg" aria-hidden="true"></i>
+							Mode Terang
+							<i class="fal fa-check" aria-hidden="true"></i>
+						</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" data-theme="dark" aria-pressed="false">
+							<i class="fal fa-moon fa-fw fa-lg" aria-hidden="true"></i>
+							Mode Gelap
+							<i class="fal fa-check" aria-hidden="true"></i>
+						</button>
+					</li>
+					<li class="nav-item">
+						<button class="nav-link" data-theme="system" aria-pressed="false">
+							<i class="fal fa-eclipse fa-fw fa-lg" aria-hidden="true"></i>
+							Otomatis
+							<i class="fal fa-check" aria-hidden="true"></i>
+						</button>
+					</li>
+				</ul>
+			</li>
+			<li class="nav-item py-2 py-lg-1">
+				<div class="vr d-md-flex h-100 mx-lg-2 text-white"></div>
+			</li>
+			<li class="nav-item"><a class="nav-link rounded" href="https://panduanwcag.com" target="_blank">
+					<i class="fa-kit fa-wcag" aria-hidden="true" data-bs-toggle="tooltip" title="Panduan WCAG Indonesia"></i>
+					<span class="sr-only">Panduan WCAG Indonesia</span>
+				</a></li>
+		</ul>
+	</nav>
+</header>
+
+
+
+<nav class="navbar navbar-bottom navbar-expand tabbar fixed-bottom d-block d-lg-none" aria-label="Navigasi Bawah">
+	<ul class="navbar-nav flex-row"> {% set current = page.route %}
+		<li class="nav-item col">
+			<a class="nav-link {% if current == '/' %}active{% endif %}" href="{{ base_url }}/"> <i class="fal fa-home" aria-hidden="true"></i>
+				<span>Beranda</span> </a>
+		</li>
+		
+		<li class="nav-item col dropup-center dropup">
+			<button class="nav-link {% if current starts with('/disabilitas') or current starts with('/aksesibilitas') or current starts with('/regulasi') or current starts with('/standar') %}active{% endif %}" id="topikMenu" data-bs-toggle="dropdown" aria-expanded="false">
+				<i class="fal fa-folder-open" aria-hidden="true"></i>
+				<span>Modul</span>
+			</button>
+			<ul class="multi-menu dropdown-menu" aria-labelledby="topikMenu">
+				<li class="nav-item">
+					<a class="nav-link {% if current starts with '/disabilitas' %}active{% endif %}" href="{{ base_url }}/disabilitas">
+						<i class="fal fa-wheelchair fa-fw fa-lg" aria-hidden="true"></i> Disabilitas
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {% if current starts with '/aksesibilitas' %}active{% endif %}" href="{{ base_url }}/aksesibilitas">
+						<i class="fal fa-universal-access fa-fw fa-lg" aria-hidden="true"></i> Aksesibilitas
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {% if current starts with '/regulasi' %}active{% endif %}" href="{{ base_url }}/regulasi">
+						<i class="fal fa-gavel fa-fw fa-lg" aria-hidden="true"></i> Regulasi
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {% if current starts with '/standar' %}active{% endif %}" href="{{ base_url }}/standar">
+						<i class="fal fa-clipboard-list-check fa-fw fa-lg" aria-hidden="true"></i> Standar
+					</a>
+				</li>
+			</ul>
+		</li>
+		
+		<li class="nav-item col">
+			<a class="nav-link {% if current starts with '/kuis' %}active{% endif %}" href="{{ base_url }}/kuis">
+				<i class="fal fa-block-question" aria-hidden="true"></i>
+				<span>Kuis</span> </a>
+		</li>
+		
+		<li class="nav-item col">
+			<a class="nav-link {% if current starts with '/glosarium' %}active{% endif %}" href="{{ base_url }}/glosarium">
+				<i class="fal fa-font-case" aria-hidden="true"></i>
+				<span>Glosari</span> </a>
+		</li>
+
+
+		<li class="nav-item col">
+			<a class="nav-link {% if current == '/tentang' %}active{% endif %}" href="{{ base_url }}/tentang">
+				<i class="fal fa-circle-info" aria-hidden="true"></i>
+				<span>Tentang</span> </a>
+		</li>
+	</ul>
+</nav>

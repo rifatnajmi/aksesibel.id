@@ -1,0 +1,27 @@
+{% set min_chars = config.get('plugins.simplesearch.min_query_length', 3) %}
+<div class="search-wrapper">
+	<form name="search" data-simplesearch-form>
+		<div class="input-group">
+		<input
+			   name="searchfield"
+			   type="text"
+			   class="form-control search-input"
+			   aria-label="cari"
+			   aria-describedby="search-help"
+			   {% if min_chars > 0 %} data-min="{{- min_chars -}}" {% endif %}
+				required
+				placeholder="Misal: Kontras"
+				value="{{ query|e }}"
+				data-search-invalid="{{ "PLUGIN_SIMPLESEARCH.SEARCH_FIELD_MINIMUM_CHARACTERS"|t(min_chars)|raw }}"
+				data-search-separator="{{ config.system.param_sep }}"
+				data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route == '@self' ? '' : (config.plugins.simplesearch.route == '/' ? '' : config.plugins.simplesearch.route) }}/query"
+		/>
+		{% if config.plugins.simplesearch.display_button %}
+		<button class="btn btn-yellow search-submit" type="submit">Cari</button>
+		{% endif %}
+			</div>
+		<small id="search-help">
+  			Minimal 3 karakter
+		</small>
+	</form>
+</div>

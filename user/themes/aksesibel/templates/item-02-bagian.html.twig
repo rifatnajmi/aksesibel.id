@@ -1,0 +1,102 @@
+
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+{% include 'partials/sidebar.html.twig' %}
+<main class="col-lg-9 col-xl-8">
+	<nav class="post-navigation justify-content-between mb-1" style="--bs-breadcrumb-divider: '/';" aria-label="Breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="{{ base_url }}">Beranda</a></li>
+
+			{% if page.parent and page.parent.parent %}
+			{% set grandparent = page.parent.parent %}
+			{% if grandparent.title and grandparent.title != 'Pages' %}
+			<li class="breadcrumb-item"><a href="{{ grandparent.url }}">{{ grandparent.title }}</a></li>
+			{% endif %}
+			{% endif %}
+
+			{% if page.parent %}
+			{% set parent = page.parent %}
+			{% if parent.title and parent.title != 'Pages' %}
+			<li class="breadcrumb-item"><a href="{{ parent.url }}">{{ parent.title }}</a></li>
+			{% endif %}
+			{% endif %}
+
+			<li class="breadcrumb-item visually-hidden" aria-current="page">{{ page.title }}</li>
+		</ol>
+
+
+	</nav>
+	<article id="utama" class="row justify-content-center">
+		<header class="col-md-12">
+			<h1 class="post-title">
+				{{ page.title }}
+			</h1>
+			<p class="lead">{{ page.header.metadata.description }}</p>
+			{% include 'partials/post-meta.html.twig' %}
+		</header>
+		<section class="post-content col-md-12 content">
+			{{ page.content|markdown }}
+
+			<h2>Kuis {{ page.title|lower }}</h2>
+			Setelah membaca, kamu bisa menguji pemahamanmu dengan mengisi <a href="{{ page.url }}/kuis">kuis</a> terkait {{ page.title|lower }}.
+			<div id="quiz-progress" data-quiz-id="{{ page.header.quiz_id }}" data-total-questions="5"></div>
+
+<script>document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("quiz-progress");if(!e)return;const t=e.dataset.quizId,n=parseInt(e.dataset.totalQuestions,10);let r=0,s=0;for(let e=0;e<n;e++){null!==localStorage.getItem(`${t}_answer_${e}`)&&r++,"1"===localStorage.getItem(`${t}_correct_${e}`)&&s++}const o=r===n,c=((s/n)*100).toFixed(0),a=r-s,d=((a/n)*100).toFixed(0);e.innerHTML=`<div id="quiz-summary-card" class="card mb-1 mt-1"><div class="card-body"><div class="progress mb-1"><div role="progressbar" class="progress-bar progress-bar-striped progress-bar-animated progress-correct" style="width: ${c}%">${c>10?c+"%":""}</div><div class="progress-bar progress-incorrect" style="width: ${d}%">${d>10?d+"%":""}</div></div>${o?`Kamu sudah menyelesaikan kuis ini.<br>Nilai: ${c}%`:`<p>Kamu menjawab: ${r} dari ${n} pertanyaan.<br>Nilai sementara: ${c}%</p><a href="{{ page.url }}/kuis" class="btn btn-sm btn-primary mt-1">Lanjutkan kuis</a>`}</div></div>`});</script>
+
+			{% include 'partials/post-author.html.twig' %}
+		</section>
+		<section class="post-authors col-md-12">
+{% if page.header.authors %}
+  <section class="authors">
+    {% for id in page.header.authors %}
+      {% set author = authors[id] %}
+      <div id="author-{{ id }}" class="author-block">
+        {% if author.foto %}
+          <img src="{{ author.foto }}" alt="{{ author.name }}">
+        {% endif %}
+        <h3>{{ author.name }}</h3>
+        <p>{{ author.bio }}</p>
+        <p class="social-links">
+          {% if author.twitter %}
+            <a href="https://twitter.com/{{ author.twitter }}">Twitter</a>
+          {% endif %}
+          {% if author.instagram %}
+            <a href="https://instagram.com/{{ author.instagram }}">Instagram</a>
+          {% endif %}
+          {% if author.linkedin %}
+            <a href="{{ author.linkedin }}">LinkedIn</a>
+          {% endif %}
+          {% if author.website %}
+            <a href="{{ author.website }}">Website</a>
+          {% endif %}
+        </p>
+      </div>
+    {% endfor %}
+  </section>
+{% endif %}
+
+
+		</section>
+	</article>
+	{% include 'partials/prevnext-02-bagian.html.twig' %}
+	
+	
+	
+</main>
+<div class="d-none d-xl-block col-xl-2">
+	<noscript>
+		<style type="text/css">
+			#toc {
+				display: none;
+			}
+
+		</style>
+	</noscript>
+	<nav id="toc" class="sticky-top" aria-label="Daftar isi">
+		<h2 class="h4 m-0">Di halaman ini</h2>
+	</nav>
+</div>
+{% block main %}
+{{ assets.js('toc')|raw }}
+{% endblock %}
+{% endblock %}

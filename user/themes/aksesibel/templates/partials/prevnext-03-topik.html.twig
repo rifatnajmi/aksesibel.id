@@ -1,0 +1,49 @@
+<ul class="row prevnext justify-content-between list-unstyled">
+  {# === PREV BUTTON === #}
+  <li class="col-6 text-left">
+    {% if page.isFirst(page.path) %}
+      {# Kalau child pertama, prev ke parent #}
+      <a href="{{ page.parent.url }}" class="nowrap prev rounded">
+        <i class="fal fa-chevron-left" aria-hidden="true"></i>
+        <span class="truncate">{{ page.parent.title }}</span>
+      </a>
+    {% else %}
+      {# Kalau bukan child pertama, prev ke sibling sebelumnya (secara UI: nextSibling) #}
+      <a href="{{ page.nextSibling(page.path).url }}" class="nowrap prev rounded">
+        <i class="fal fa-chevron-left" aria-hidden="true"></i>
+        <span class="truncate">{{ page.nextSibling(page.path).title }}</span>
+      </a>
+    {% endif %}
+  </li>
+  {# === NEXT BUTTON === #}
+  <li class="col-6 text-right">
+  {% if not page.isLast(page.path) %}
+  {# Masih punya sibling berikutnya #}
+  <a href="{{ page.prevSibling(page.path).url }}" class="nowrap next rounded">
+    <span class="truncate">{{ page.prevSibling(page.path).title }}</span>
+    <i class="fal fa-chevron-right" aria-hidden="true"></i>
+  </a>
+{% else %}
+  {% set parent = page.parent %}
+  {% if not parent.isLast() %}
+    {# Parent masih punya sibling berikutnya (secara UI) #}
+    <a href="{{ parent.prevSibling().url }}" class="nowrap next rounded">
+      <span class="truncate">{{ parent.prevSibling().title }}</span>
+      <i class="fal fa-chevron-right" aria-hidden="true"></i>
+    </a>
+  {% else %}
+    {# Coba ambil next_grandparent dari frontmatter #}
+    {% set nextGrandparentRoute = parent.parent.header.next_grandparent ?? null %}
+    {% if nextGrandparentRoute %}
+      {% set nextGrandparent = page.find(nextGrandparentRoute) %}
+      {% if nextGrandparent %}
+        <a href="{{ nextGrandparent.url }}" class="nowrap next rounded">
+          <span class="truncate">{{ nextGrandparent.title }}</span>
+          <i class="fal fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+  </li>
+</ul>

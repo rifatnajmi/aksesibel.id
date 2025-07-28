@@ -1,0 +1,19 @@
+title: Aksesibel
+default_lang: id
+author:
+  name: 'Rifat Najmi'
+  email: info@rifatnajmi.com
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'Sumber belajar terbuka tentang disabilitas, aksesibilitas, teknologi bantu, dan desain inklusif. Ditulis dengan bahasa yang mudah dipahami, situs web ini membantu siapa pun memahami dasar-dasar inklusi dan membangun dunia yang lebih ramah untuk semua.'
+summary:
+  enabled: false
+  format: short
+  size: 300
+  delimiter: '==='
+redirects: null
+routes: null
+blog:
+  route: /blog

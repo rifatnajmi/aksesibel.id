@@ -1,0 +1,30 @@
+title: Topik
+'@extends': default
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        content:
+          fields:
+            header.authors:
+              type: select
+              label: Kontributor
+              multiple: true
+              options:
+                rifat: Rifat Najmi
+                fida: Alfida Zahra Firdausi
+                alya: Alya Dhia Zahra
+                alfi: Alysia Alfi
+                anggun: Anggun Cahya Ningrum
+                silvi: Arianti Silvia
+                dian: Dian Anindya
+                fadhil: Fadhil Abdillah
+                keziah: Keziah Cahya Virdayanti
+                sekar: Madeleine Sekar Putri W
+                ocal: Muhammad Kautsar
+                sarai: Sarifadhilah Aziz
+              default: []
+              validate:
+                type: array

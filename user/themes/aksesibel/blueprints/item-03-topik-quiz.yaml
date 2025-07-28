@@ -1,0 +1,44 @@
+title: Halaman Kuis
+
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+            header.questions:
+              type: list
+              label: Daftar Pertanyaan
+              style: vertical
+              fields:
+                .question:
+                  type: text
+                  label: Pertanyaan
+
+                .choices:
+                  type: list
+                  label: Pilihan Jawaban
+                  style: vertical
+                  fields:
+                    .text:
+                      type: text
+                      label: Teks Pilihan
+
+                    .correct:
+                      type: toggle
+                      label: Jawaban Benar?
+                      highlight: 0
+                      default: 0
+                      options:
+                        1: Ya
+                        0: Tidak
+
+                    .feedback:
+                      type: textarea
+                      label: Umpan Balik (Feedback)
+                      rows: 2
