@@ -6,9 +6,8 @@
 
 Repositori ini berisi seluruh source code situs Grav, termasuk:
 - `user/pages/`: Konten situs dalam format Markdown
-- `user/themes/`: Tema kustom jika ada
-- `.gitignore`: Agar file sensitif seperti cache dan akun tidak ikut terunggah
-- Tanpa `user/accounts/`: Harap buat akun admin sendiri jika menjalankan secara lokal
+- `user/themes/`: Tema kustom yang digunakan untuk menjalankan [aksesibel.id](https://aksesibel.id)
+- Tanpa `user/accounts/`: Harap buat akun admin sendiri
 
 ## 🚀 Cara Menjalankan di Lokal
 
@@ -21,7 +20,7 @@ cd aksesibel.id
 ```bash
 composer install
 ```
-### 3. Jalankan server lokal (opsi):
+### 3. Jalankan server lokal:
 ```bash
 php -S localhost:8000
 ```
@@ -29,7 +28,7 @@ Akses di browser: `http://localhost:8000`
 Atau gunakan [MAMP](https://www.mamp.info/en/mac/) seperti yang digunakan pengembang.
 
 ## 📦 Grav Skeleton
-Ini adalah full Grav site (bukan theme/plugin), jadi kamu bisa langsung clone dan jalankan — tidak perlu install Grav terpisah.
+Ini adalah full Grav site (bukan theme/plugin), jadi kamu bisa langsung clone dan jalankan, tidak perlu install Grav terpisah.
 
 ## ⚠️ Catatan Keamanan
 Folder `user/accounts/` tidak diikutsertakan. Jika kamu ingin login sebagai admin di lokal:
