@@ -466,6 +466,7 @@ $fa-var-block-question: \e3dd;
 $fa-var-block-quote: \e0b5;
 $fa-var-blog: \f781;
 $fa-var-blueberries: \e2e8;
+$fa-var-bluetooth: \f293;
 $fa-var-bold: \f032;
 $fa-var-bolt: \f0e7;
 $fa-var-zap: \f0e7;
@@ -1886,6 +1887,9 @@ $fa-var-folder-times: \f65f;
 $fa-var-folders: \f660;
 $fa-var-fondue-pot: \e40d;
 $fa-var-font: \f031;
+$fa-var-font-awesome: \f2b4;
+$fa-var-font-awesome-flag: \f2b4;
+$fa-var-font-awesome-logo-full: \f2b4;
 $fa-var-font-case: \f866;
 $fa-var-football: \f44e;
 $fa-var-football-ball: \f44e;
@@ -2765,6 +2769,7 @@ $fa-var-nfc-magnifying-glass: \e1f9;
 $fa-var-nfc-pen: \e1fa;
 $fa-var-nfc-signal: \e1fb;
 $fa-var-nfc-slash: \e1fc;
+$fa-var-nfc-symbol: \e531;
 $fa-var-nfc-trash: \e1fd;
 $fa-var-nose: \e5bd;
 $fa-var-not-equal: \f53e;
@@ -4283,6 +4288,7 @@ $fa-var-waveform: \f8f1;
 $fa-var-waveform-lines: \f8f2;
 $fa-var-waveform-path: \f8f2;
 $fa-var-waves-sine: \e65d;
+$fa-var-web-awesome: \e682;
 $fa-var-webhook: \e5d5;
 $fa-var-weight-hanging: \f5cd;
 $fa-var-weight-scale: \f496;
@@ -5306,6 +5312,7 @@ $fa-icons: (
   "block-quote": $fa-var-block-quote,
   "blog": $fa-var-blog,
   "blueberries": $fa-var-blueberries,
+  "bluetooth": $fa-var-bluetooth,
   "bold": $fa-var-bold,
   "bolt": $fa-var-bolt,
   "zap": $fa-var-zap,
@@ -6726,6 +6733,9 @@ $fa-icons: (
   "folders": $fa-var-folders,
   "fondue-pot": $fa-var-fondue-pot,
   "font": $fa-var-font,
+  "font-awesome": $fa-var-font-awesome,
+  "font-awesome-flag": $fa-var-font-awesome-flag,
+  "font-awesome-logo-full": $fa-var-font-awesome-logo-full,
   "font-case": $fa-var-font-case,
   "football": $fa-var-football,
   "football-ball": $fa-var-football-ball,
@@ -7605,6 +7615,7 @@ $fa-icons: (
   "nfc-pen": $fa-var-nfc-pen,
   "nfc-signal": $fa-var-nfc-signal,
   "nfc-slash": $fa-var-nfc-slash,
+  "nfc-symbol": $fa-var-nfc-symbol,
   "nfc-trash": $fa-var-nfc-trash,
   "nose": $fa-var-nose,
   "not-equal": $fa-var-not-equal,
@@ -9123,6 +9134,7 @@ $fa-icons: (
   "waveform-lines": $fa-var-waveform-lines,
   "waveform-path": $fa-var-waveform-path,
   "waves-sine": $fa-var-waves-sine,
+  "web-awesome": $fa-var-web-awesome,
   "webhook": $fa-var-webhook,
   "weight-hanging": $fa-var-weight-hanging,
   "weight-scale": $fa-var-weight-scale,

@@ -6,3 +6,6 @@ user/accounts/
 .DS_Store
 Thumbs.db
 *.zip
+*.otf
+*.ttf
+*.woff2
