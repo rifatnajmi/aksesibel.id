@@ -1,0 +1,108 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="container py-5 glosarium-container">
+  <h1 class="mb-3">{{ flex.info.title }}</h1>
+  <p class="text-muted">{{ flex.info.description }}</p>
+
+  {% if collection is not empty %}
+    {# Sort & group collection #}
+    {% set sorted_collection = collection|sort((a, b) => a.title|lower <=> b.title|lower) %}
+    {% set grouped = {} %}
+    {% set numeric_group = [] %}
+
+    {% for object in sorted_collection %}
+      {% set first_char = object.title|first|upper %}
+      {% if first_char matches '/[0-9]/' %}
+        {% set numeric_group = numeric_group|merge([object]) %}
+      {% else %}
+        {% if grouped[first_char] is not defined %}
+          {% set grouped = grouped|merge({(first_char): []}) %}
+        {% endif %}
+        {% set grouped = grouped|merge({(first_char): grouped[first_char]|merge([object])}) %}
+      {% endif %}
+    {% endfor %}
+
+    {# Navigation #}
+    <nav aria-label="Navigasi huruf" class="my-4">
+      <ul class="pagination flex-wrap justify-content-start">
+        {% if numeric_group is not empty %}
+          <li class="page-item"><a class="page-link" href="#numeric">#</a></li>
+        {% endif %}
+        {% for letter in grouped|keys|sort %}
+          <li class="page-item">
+            <a class="page-link" href="#{{ letter|lower }}">{{ letter }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    {# Helper: Anchor Generator #}
+    {% macro make_anchor(text) %}
+      {{- text|lower|replace({
+        ' ': '-', '/': '-', '\\': '-', '(': '', ')': '',
+        '[': '', ']': '', '{': '', '}': '', '"': '',
+        "'": '', ',': '', '.': '', ':': '', ';': '',
+        '!': '', '?': '', '&': 'dan', '+': 'plus'
+      })|replace('/[^a-z0-9-]/', '')|trim('-') -}}
+    {% endmacro %}
+
+    {% import _self as util %}
+
+    {# Numeric section #}
+    {% if numeric_group is not empty %}
+      <section id="numeric" class="mb-5">
+        <h2 class="h4 border-bottom pb-2">#</h2>
+        {% for object in numeric_group %}
+          {% set anchor = util.make_anchor(object.title) %}
+          <div id="{{ anchor }}" class="mb-4">
+            <h3 class="h5">
+              <a href="#{{ anchor }}" class="text-decoration-none">{{ object.title }}</a>
+            </h3>
+            <p class="mb-1">{{ object.definition|markdown }}</p>
+            {% if object.tags %}
+              <div>
+                <span class="text-muted small">Tag:</span>
+                {% for tag in object.tags %}
+                  <span class="badge bg-secondary me-1">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    {# Alphabetical sections #}
+    {% for letter, objects in grouped %}
+      <section id="{{ letter|lower }}" class="mb-5">
+        <h2 class="h4 border-bottom pb-2">{{ letter }}</h2>
+        {% for object in objects %}
+          {% set anchor = util.make_anchor(object.title) %}
+          <div id="{{ anchor }}" class="mb-4">
+            <h3 class="h5">
+              <a href="#{{ anchor }}" class="text-decoration-none">{{ object.title }}</a>
+            </h3>
+            <p class="mb-1">{{ object.definition|markdown }}</p>
+            {% if object.tags %}
+              <div>
+                <span class="text-muted small">Tag:</span>
+                {% for tag in object.tags %}
+                  <span class="badge bg-secondary me-1">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </section>
+    {% endfor %}
+
+  {% else %}
+    <div class="alert alert-info">Belum ada entri glosarium.</div>
+  {% endif %}
+
+  <div class="text-end mt-4">
+    <a href="#top" class="btn btn-outline-primary">↑ Kembali ke atas</a>
+  </div>
+</div>
+{% endblock %}

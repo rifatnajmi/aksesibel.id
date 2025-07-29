@@ -7,6 +7,9 @@ content:
     items: '@self.children'
 visible: true
 next_grandparent: /aksesibilitas
+authors:
+    - fida
+    - alfi
 ---
 
 ## Ringkasan

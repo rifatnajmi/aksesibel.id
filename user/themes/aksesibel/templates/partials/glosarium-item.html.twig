@@ -1,0 +1,13 @@
+{% set anchor = object.title|lower|replace({
+  ' ': '-', '/': '-', '\\': '-', '(': '', ')': '', '[': '', ']': '', '{': '', '}': '',
+  '"': '', "'": '', ',': '', '.': '', ':': '', ';': '', '!': '', '?': '', '&': 'dan', '+': 'plus'
+})|replace('/[^a-z0-9-]/', '')|trim('-') %}
+
+<dl class="term-entry mb-1" id="{{ anchor }}">
+  <dt class="term-title">
+    <h3>{{ object.title }}</h3>
+  </dt>
+  <dd class="term-definition">
+    {{ object.definition|markdown }}
+  </dd>
+</dl>

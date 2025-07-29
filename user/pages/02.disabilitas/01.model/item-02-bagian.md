@@ -9,7 +9,7 @@ content:
     items: '@self.children'
 authors:
     - rifat
-    - ocal
+    - alya
 ---
 
 Tidak ada model yang sepenuhnya lengkap, jadi tidak bisa dikatakan sepenuhnya benar atau salah. Setiap model punya kelebihan dan kekurangan masing-masing. Dalam praktiknya, tiap organisasi biasanya menggunakan bagian dari beberapa model, terutama model sosial dan model medis.

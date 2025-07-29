@@ -1,0 +1,110 @@
+title: Glosarium
+description: Kumpulan istilah aksesibilitas digital.
+type: flex-objects
+
+# Flex Configuration
+config:
+  # Administration Configuration
+  admin:
+    # Admin router (optional)
+    router:
+      path: "/glosarium"
+    # Admin menu (optional)
+    menu:
+      list:
+        route: "/glosarium"
+        title: Glosarium
+        icon: fa-book
+        # Authorization to collection admin
+        authorize: ["admin.glosarium.list", "admin.super"]
+        # Priority -10 .. 10 (highest goes up)
+        priority: 0
+    # Admin template type / folder
+    template: default
+    # Permissions
+    permissions:
+      # Primary permissions
+      admin.glosarium:
+        type: crudpl
+        label: Glosarium
+    # List view
+    list:
+      sort:
+        by: title
+        dir: ASC
+      title: title
+      fields:
+        title:
+        definition:
+    # Edit View
+    edit:
+      title:
+        template: "{{ object.title ?? 'Istilah Baru' }}"
+    # Preview View
+    preview:
+      enabled: false
+    # Data Export
+    export:
+      enabled: true
+      method: "jsonSerialize"
+      formatter:
+        class: 'Grav\Framework\File\Formatter\YamlFormatter'
+      filename: "glosarium"
+  
+  # Site Configuration
+  site:
+    templates:
+      collection:
+        # Lookup for the template layout files for collections of objects
+        paths:
+          - "flex/{TYPE}/collection/{LAYOUT}{EXT}"
+      object:
+        # Lookup for the template layout files for objects
+        paths:
+          - "flex/{TYPE}/object/{LAYOUT}{EXT}"
+      defaults:
+        # Default template {TYPE}; overridden by filename of this blueprint if template folder exists
+        type: glosarium
+        # Default template {LAYOUT}; can be overridden in render calls (usually Twig in templates)
+        layout: default
+  
+  # Data Configuration
+  data:
+    # Object class to be used, allowing custom methods for the object
+    object: 'Grav\Common\Flex\Types\Generic\GenericObject'
+    # Collection class to be used, allowing custom methods for the collections
+    collection: 'Grav\Common\Flex\Types\Generic\GenericCollection'
+    # Index class to be used, works as a quick database-like lookup index
+    index: 'Grav\Common\Flex\Types\Generic\GenericIndex'
+    indexed:
+      - title
+    storage:
+        class: 'Grav\Framework\Flex\Storage\SimpleStorage'
+        options:
+          formatter:
+            class: 'Grav\Framework\File\Formatter\JsonFormatter'
+          folder: user-data://flex-objects/glosarium.json
+    search:
+      # Search options
+      options:
+        contains: 1
+      # Fields to be searched
+      fields:
+        - title
+        - definition
+
+form:
+  validation: loose
+  fields:
+    title:
+      type: text
+      label: Judul
+      classes: fancy
+      validate:
+        required: true
+    definition:
+      type: markdown
+      label: Definisi
+      classes: fancy
+      validate:
+        required: true

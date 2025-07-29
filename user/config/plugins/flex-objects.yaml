@@ -7,6 +7,7 @@ admin_list:
     by: updated_timestamp
     dir: desc
 directories:
-  1: 'blueprints://flex-objects/pages.yaml'
-  2: 'blueprints://flex-objects/user-accounts.yaml'
-  3: 'blueprints://flex-objects/user-groups.yaml'
+  1: 'blueprints://flex-objects/glosarium.yaml'
+  2: 'blueprints://flex-objects/pages.yaml'
+  3: 'blueprints://flex-objects/user-accounts.yaml'
+  4: 'blueprints://flex-objects/user-groups.yaml'
