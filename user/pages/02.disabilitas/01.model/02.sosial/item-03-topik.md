@@ -1,5 +1,8 @@
 ---
 title: 'Model sosial'
+authors:
+    - anggun
+    - nadija
 ---
 
 Model sosial menekankan bahwa disabilitas bukan berasal dari kondisi tubuh seseorang, tetapi dari hambatan buatan manusia dalam lingkungan sosial, seperti bangunan, sistem, kebijakan, atau sikap yang tidak inklusif. Ketika hambatan ini dihilangkan, individu dengan disabilitas dapat berpartisipasi secara setara dan mandiri dalam masyarakat.

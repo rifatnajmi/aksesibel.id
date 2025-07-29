@@ -1,5 +1,8 @@
 ---
 title: 'Model ekonomi'
+authors:
+    - silvi
+    - sekar
 ---
 
 Model ekonomi memandang disabilitas dari sisi ketidakmampuan seseorang untuk bekerja dan produktivitas yang terganggu akibat hambatan fisik. Model ini menilai dampak disabilitas terhadap individu, pemberi kerja, dan negara, misalnya melalui hilangnya penghasilan, biaya bantuan, penurunan margin keuntungan, atau kebutuhan tunjangan negara. Model ini sering digunakan untuk menilai kelayakan seseorang dalam menerima bantuan atau tunjangan disabilitas.

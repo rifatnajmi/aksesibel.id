@@ -6,6 +6,9 @@ content:
     items: '@self.children'
 metadata:
     description: 'Cara berinteraksi dengan penyandang disabilitas secara hormat melalui panduan etika disabilitas, mulai dari bahasa inklusif hingga etika spesifik.'
+authors:
+    - ocal
+    - anggun
 ---
 
 Etika disabilitas adalah seperangkat panduan tentang bagaimana cara berinteraksi dan berbicara dengan individu dengan disabilitas secara hormat, memperlakukan mereka dengan respek, dan menyebut mereka dengan cara yang pantas.

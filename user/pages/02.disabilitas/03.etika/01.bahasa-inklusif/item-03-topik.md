@@ -2,6 +2,9 @@
 title: 'Bahasa inklusif'
 metadata:
     description: 'Pahami perbedaan antara people-first dan identity-first language dalam konteks disabilitas. Pelajari penggunaan istilah yang inklusif, hindari istilah yang menyinggung, dan kenali preferensi individu dalam penyebutan.'
+authors:
+    - nadija
+    - alya
 ---
 
 Memahami sudut pandang orang lain dan peka terhadap bahasa seputar disabilitas menunjukkan rasa hormat terhadap martabat mereka. Seiring meningkatnya kesadaran dan inklusi, istilah-istilah pun berkembang. Penting untuk menghindari istilah yang menyinggung atau sudah usang, serta mengetahui apakah seseorang dengan disabilitas lebih memilih bahasa yang mendahulukan individunya atau identitas disabilitasnya.

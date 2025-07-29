@@ -2,6 +2,9 @@
 title: 'Disabilitas visual'
 metadata:
     description: 'Disabilitas visual mencakup gangguan penglihatan sebagian atau total, termasuk penurunan ketajaman, sensitivitas terhadap warna atau cahaya, dan kondisi yang tidak bisa diperbaiki dengan alat bantu.'
+authors:
+    - nadija
+    - alya
 ---
 
 Disabilitas visual adalah jenis disabilitas sensorik yang mencakup berbagai kondisi, seperti kehilangan sebagian penglihatan, penurunan ketajaman visual, serta perubahan sensitivitas terhadap warna tertentu atau warna yang sangat terang. Selain itu, disabilitas ini juga meliputi kehilangan penglihatan secara total atau kondisi di mana penglihatan tidak dapat diperbaiki dengan alat bantu pada satu atau kedua mata.

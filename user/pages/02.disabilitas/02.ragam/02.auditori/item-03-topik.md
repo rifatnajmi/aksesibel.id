@@ -2,6 +2,9 @@
 title: 'Disabilitas auditori'
 metadata:
     description: 'Tuli adalah kehilangan pendengaran total atau hampiur total, sedangkan hard of hearing mencakup gangguan ringan hingga berat. Keduanya memengaruhi cara orang berkomunikasi dan mengakses informasi.'
+authors:
+    - alya
+    - fida
 ---
 
 ## Tuli

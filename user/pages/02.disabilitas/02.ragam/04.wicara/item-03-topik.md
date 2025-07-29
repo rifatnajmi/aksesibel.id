@@ -2,6 +2,9 @@
 title: 'Disabilitas wicara'
 metadata:
     description: 'Disabilitas wicara bisa berupa ucapan yang sedikit tidak jelas sampai ketidakmampuan total untuk berbicara.'
+authors:
+    - anggun
+    - sarai
 ---
 
 Kemampuan seseorang untuk berbicara tidak selalu berkaitan dengan kemampuan bahasanya. Seseorang bisa saja lancar membaca, menulis, dan memahami bahasa, meskipun tidak bisa bicara. Gangguan bicara bisa disebabkan oleh kondisi disabilitas tertentu. 

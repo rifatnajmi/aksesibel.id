@@ -1,5 +1,8 @@
 ---
 title: 'Model amal'
+authors:
+    - fida
+    - silvi
 ---
 
 Model amal memandang individu dengan disabilitas sebagai orang yang malang dan memerlukan bantuan dari pihak luar. Dalam model ini, orang-orang yang memberikan bantuan dianggap sebagai dermawan yang berkontribusi kepada mereka yang membutuhkan. Pendekatan ini sering kali berfokus pada pemberian bantuan langsung, seperti donasi atau layanan sosial, dengan tujuan mengurangi penderitaan individu dengan disabilitas tanpa terlalu memperhatikan perubahan struktural yang lebih luas dalam masyarakat.

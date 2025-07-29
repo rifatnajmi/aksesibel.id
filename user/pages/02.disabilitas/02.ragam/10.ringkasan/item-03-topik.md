@@ -1,5 +1,8 @@
 ---
 title: 'Ringkasan jenis disabilitas'
+authors:
+    - sekar
+    - silvi
 ---
 
 ## Disabilitas visual

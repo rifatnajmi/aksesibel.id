@@ -2,6 +2,9 @@
 title: 'Disabilitas mobilitas dan struktur tubuh'
 metadata:
     description: 'Disabilitas mobilitas dan struktur tubuh mencakup keterbatasan dalam bergerak, berjalan, atau mengendalikan anggota tubuh, termasuk gangguan motorik halus, kelelahan otot, serta perbedaan bentuk atau ukuran tubuh.'
+authors:
+    - silvi
+    - nadija
 ---
 
 Disabilitas mobilitas mencakup:

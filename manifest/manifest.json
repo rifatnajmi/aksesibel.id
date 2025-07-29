@@ -1,0 +1,57 @@
+{
+  "name": "Aksesibel",
+  "short_name": "Aksesibel",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F6B33",
+  "theme_color": "#0F6B33",
+  "icons": [
+    {
+      "src": "https://aksesibel.id/manifest/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+	{
+      "src": "https://aksesibel.id/manifest/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://aksesibel.id/manifest/favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Modul Disabilitas",
+      "short_name": "Disabilitas",
+      "url": "/disabilitas",
+      "icons": [{ "src": "https://aksesibel.id/manifest/icon-disabilitas.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Modul Aksesibilitas",
+      "short_name": "Aksesibilitas",
+      "url": "/aksesibilitas",
+      "icons": [{ "src": "https://aksesibel.id/manifest/icon-aksesibilitas.png", "sizes": "192x192", "type": "image/png" }]
+    },
+	{
+      "name": "Modul Regulasi",
+      "short_name": "Regulasi",
+      "url": "/regulasi",
+      "icons": [{ "src": "https://aksesibel.id/manifest/icon-regulasi.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Modul Standar",
+      "short_name": "Standar",
+      "url": "/standar",
+      "icons": [{ "src": "https://aksesibel.id/manifest/icon-standar.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Kuis",
+      "short_name": "Kuis",
+      "url": "/kuis",
+      "icons": [{ "src": "https://aksesibel.id/manifest/icon-kuis.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

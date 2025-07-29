@@ -2,6 +2,10 @@
 title: 'Disabilitas neurologis'
 metadata:
     description: 'Disabilitas neurologis memengaruhi otak, tulang belakang, dan saraf.'
+authors:
+    - sarai
+    - silvi
+    - sekar
 ---
 
 Disabilitas neurologis adalah gangguan pada otak, tulang belakang, dan saraf yang menghubungkan keduanya. Beberapa disabilitas umum terkait neurologis dijelaskan di sini.

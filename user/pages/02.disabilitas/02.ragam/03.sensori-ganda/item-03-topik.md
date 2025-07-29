@@ -1,5 +1,8 @@
 ---
 title: 'Disabilitas sensori ganda'
+authors:
+    - alfi
+    - rifat
 ---
 
 Disabilitas sensori ganda mencakup gangguan pendengaran dan penglihatan.  

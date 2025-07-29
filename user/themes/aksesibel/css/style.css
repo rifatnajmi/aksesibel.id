@@ -202,6 +202,8 @@ a:hover, .post-content a:hover, footer a:hover {background:var(--text-link-hover
 
 .post-meta {font-size:.875em; padding:1em 0; margin:1em 0; border-bottom:1px solid var(--border); border-top:1px solid var(--border)}
 
+.post-attr {padding:1em; border-radius:.5em; background:var(--border)}
+
 /*padding:.5em;  border-radius:.25em; background:var(--border)}*/
 
 .post-content hr {margin-top:2em; margin-bottom:2em}

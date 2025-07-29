@@ -28,6 +28,7 @@ form:
                 sekar: Madeleine Sekar Putri W
                 ocal: Muhammad Kautsar
                 sarai: Sarifadhilah Aziz
+                nadija: Nadija Herdwina
               default: []
               validate:
                 type: array

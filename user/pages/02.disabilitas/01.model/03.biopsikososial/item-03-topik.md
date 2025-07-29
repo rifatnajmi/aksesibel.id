@@ -1,10 +1,8 @@
 ---
 title: 'Model biopsikososial'
 authors:
-    - fida
-    - anggun
-    - dian
-    - sekar
+    - alfi
+    - ocal
 ---
 
 Model biopsikososial adalah pendekatan yang menggabungkan aspek medis dan sosial dalam memahami disabilitas. Pertama kali diperkenalkan oleh George Engel pada tahun 1977, model ini menyatakan bahwa disabilitas tidak hanya dipengaruhi oleh kondisi fisik, tetapi juga oleh faktor psikologis seperti stres atau cara mengatasi masalah, serta faktor sosial seperti lingkungan kerja, dukungan keluarga, dan kondisi ekonomi.

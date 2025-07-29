@@ -12,7 +12,15 @@ authors:
     - alya
 ---
 
-Tidak ada model yang sepenuhnya lengkap, jadi tidak bisa dikatakan sepenuhnya benar atau salah. Setiap model punya kelebihan dan kekurangan masing-masing. Dalam praktiknya, tiap organisasi biasanya menggunakan bagian dari beberapa model, terutama model sosial dan model medis.
+Tidak ada satupun model teoritis disabilitas yang sepenuhnya benar. Setiap model digunakan tergantung pada situasi dan kebutuhan. Konteks sangat penting dalam memilih pendekatan yang tepat.
+
+Setiap model punya kelebihan dan kekurangan masing-masing. Sebagai contoh, model medis fokus pada kondisi fisik, sedangkan model ekonomi fokus pada berkurangnya kemampuan individu dalam mencari nafkah. Keduanya bisa dipakai bersamaan dan saling melengkapi.
+
+Ada organisasi yang memilih untuk menggabungkan dua model ini. Tujuannya agar penanganan bisa lebih menyeluruh. Dengan penggabungan ini, kebutuhan medis dan ekonomi dapat ditangani bersama.
+
+Bagian ini membahas beberapa model disabilitas yang sering digunakan. Model teoritis membantu kita memahami cara berpikir tentang suatu isu. Pandangan terhadap disabilitas mempengaruhi cara seseorang memperlakukan individu dengan disabilitas, baik secara pribadi maupun sebagai bagian dari kelompok.
+
+Dengan mengenal berbagai sudut pandang tentang disabilitas, kita jadi lebih paham asal-usul kebijakan dan sikap yang ada. Ini juga menjelaskan mengapa solusi yang dipilih bisa berbeda-beda. Pandangan ini berpengaruh pada hak, kesehatan, dan keterlibatan penyandang disabilitas dalam kehidupan sosial.
 
 ## Berbagai model disabilitas
 

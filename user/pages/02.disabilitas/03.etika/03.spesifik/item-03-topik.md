@@ -2,6 +2,9 @@
 title: 'Panduan spesifik'
 metadata:
     description: 'Panduan interaksi hormat dan inklusif dengan individu dengan disabilitas berdasarkan ragam disabilitasnya.'
+authors:
+    - alfi
+    - fida
 ---
 
 Setiap ragam disabilitas memiliki karakteristik dan kebutuhan yang berbeda, termasuk dalam cara berinteraksi sehari-hari. Penting bagi kita untuk memahami pendekatan yang tepat agar dapat bersikap inklusif dan menghormati preferensi serta otonomi individu dengan disabilitas. Berikut ini adalah panduan praktis tentang hal-hal yang sebaiknya dilakukan dan dihindari dalam berinteraksi dengan individu dengan berbagai ragam disabilitas.

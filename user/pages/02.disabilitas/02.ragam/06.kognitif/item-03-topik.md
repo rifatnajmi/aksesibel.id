@@ -2,6 +2,10 @@
 title: 'Disabilitas kognitif'
 metadata:
     description: 'Disabilitas kognitif mencakup gangguan pada fungsi berpikir, belajar, membaca, menulis, menghitung, memusatkan perhatian, hingga berkomunikasi sosial, seperti pada disleksia, ADHD, autisme, dan disabilitas intelektual.'
+authors:
+    - sarai
+    - silvi
+    - ocal
 ---
 
 Disabilitas yang memengaruhi proses kognitif seseorang cukup umum dan sering kali tidak terlihat secara langsung. Tingkat keparahannya bisa ringan hingga sangat berat, sampai orang yang mengalaminya membutuhkan banyak bantuan dalam menjalani kehidupan sehari-hari. Disabilitas kognitif bisa disebabkan oleh faktor genetik atau muncul akibat berbagai kondisi atau cedera seperti cedera otak traumatis.

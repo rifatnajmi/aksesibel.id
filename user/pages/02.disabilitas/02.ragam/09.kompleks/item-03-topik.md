@@ -2,6 +2,9 @@
 title: 'Disabilitas ganda/kompleks'
 metadata:
     description: 'Disabilitas ganda atau kompleks terjadi ketika seseorang memiliki lebih dari satu disabilitas secara bersamaan, yang membuatnya sulit dilayani dalam program pendidikan tunggal. Ciri umum meliputi kesulitan bicara, mobilitas terbatas, dan ketergantungan dalam aktivitas harian.'
+authors:
+    - keziah
+    - dian
 ---
 
 Individu dengan disabilitas kompleks memiliki dua atau lebih disabilitas secara bersamaan, yang cukup berat sehingga tidak bisa ditampung dalam program pendidikan yang hanya ditujukan untuk satu jenis disabilitas saja.

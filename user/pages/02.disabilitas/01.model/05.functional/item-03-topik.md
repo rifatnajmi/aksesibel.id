@@ -1,5 +1,8 @@
 ---
 title: 'Model functional solutions'
+authors:
+    - dian
+    - keziah
 ---
 
 Model functional solutions memandang disabilitas sebagai keterbatasan fungsi tubuh yang dapat diatasi dengan solusi praktis. Tujuan utamanya adalah mengurangi atau menghilangkan dampak keterbatasan tersebut melalui inovasi teknologi atau metode adaptif yang sesuai dengan kebutuhan individu.

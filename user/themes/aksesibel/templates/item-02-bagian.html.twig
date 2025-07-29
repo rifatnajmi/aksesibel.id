@@ -74,8 +74,9 @@
   </section>
 {% endif %}
 
-
+			
 		</section>
+		{% include 'partials/post-attr.html.twig' %}
 	</article>
 	{% include 'partials/prevnext-02-bagian.html.twig' %}
 	
@@ -94,6 +95,7 @@
 	<nav id="toc" class="sticky-top" aria-label="Daftar isi">
 		<h2 class="h4 m-0">Di halaman ini</h2>
 	</nav>
+	
 </div>
 {% block main %}
 {{ assets.js('toc')|raw }}

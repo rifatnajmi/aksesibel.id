@@ -2,6 +2,9 @@
 title: 'Panduan umum'
 metadata:
     description: 'Panduan umum dalam berinteraksi dengan individu dengan disabilitas.'
+authors:
+    - alya
+    - alfi
 ---
 
 Berinteraksi dengan individu dengan disabilitas memerlukan sikap hormat, empati, dan kesadaran diri. Dengan memahami apa yang perlu dilakukan dan dihindari, kita bisa menciptakan lingkungan yang lebih inklusif dan nyaman bagi semua orang. Panduan ini membantu kamu mengenali cara berkomunikasi yang tepat tanpa mengasumsikan kebutuhan atau kemampuan seseorang.

@@ -2,6 +2,9 @@
 title: 'Ringkasan model disabilitas'
 metadata:
     description: 'Ringkasan berbagai model disabilitas dan bagaimana masing-masing memengaruhi cara kita memahami, merespons, dan menciptakan lingkungan yang inklusif.'
+authors:
+    - sekar
+    - anggun
 ---
 
 ## Model medis

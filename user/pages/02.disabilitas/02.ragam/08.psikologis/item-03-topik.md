@@ -2,6 +2,9 @@
 title: 'Disabilitas psikologis'
 metadata:
     description: 'Disabilitas psikologis mencakup gangguan kecemasan, suasana hati, dan psikotik yang memengaruhi pikiran, perasaan, dan perilaku. Contohnya termasuk GAD, gangguan panik, fobia sosial, depresi, bipolar, SAD, dan perilaku melukai diri.'
+authors:
+    - dian
+    - keziah
 ---
 
 Disabilitas psikologis mencakup gangguan pada persepsi, pikiran, perasaan, suasana hati, dan perilaku seseorang. Kondisi ini bisa bersifat sementara atau berlangsung lama.

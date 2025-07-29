@@ -2,6 +2,9 @@
 title: 'Ringkasan etika berinteraksi'
 metadata:
     description: 'Ringkasan praktis tentang hal-hal yang sebaiknya dilakukan dan dihindari saat berinteraksi dengan individu dengan disabilitas.'
+authors:
+    - sekar
+    - rifat
 ---
 
 ## 10 etika yang perlu dilakukan

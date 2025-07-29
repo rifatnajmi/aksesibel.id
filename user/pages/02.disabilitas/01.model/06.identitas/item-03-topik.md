@@ -1,5 +1,8 @@
 ---
 title: 'Model identitas sosial'
+authors:
+    - keziah
+    - dian
 ---
 
 Model identitas sosial atau afiliasi budaya mengacu pada cara seseorang membentuk identitas pribadinya berdasarkan keanggotaan dalam kelompok dengan pemikiran atau pengalaman yang sama. Model ini paling terlihat pada komunitas tuli, di mana budaya dan identitas tuli berkembang kuat karena sifat eksklusifnya sebagai kelompok bahasa minoritas yang erat. Selain itu, orang dengan disabilitas lain juga bisa merasakan rasa kebersamaan dalam komunitas yang memiliki pengalaman hidup serupa.

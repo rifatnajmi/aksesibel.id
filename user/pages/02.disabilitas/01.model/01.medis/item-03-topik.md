@@ -7,7 +7,8 @@ permissions:
         - rifatnajmi
         - radikal
 authors:
-    - rifat
+    - alya
+    - sarai
 ---
 
 Model medis memandang disabilitas sebagai masalah individu yang disebabkan oleh penyakit, cedera, atau kondisi kesehatan lain. Disabilitas dianggap sebagai sesuatu yang perlu “disembuhkan” atau diperbaiki melalui intervensi medis oleh tenaga profesional. Tujuannya adalah membuat individu semandiri mungkin dengan mengembalikannya ke kondisi yang dianggap normal atau fungsional.

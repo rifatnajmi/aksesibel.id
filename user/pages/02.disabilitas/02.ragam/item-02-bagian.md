@@ -7,6 +7,9 @@ content:
     items: '@self.children'
 metadata:
     description: 'Ada banyak ragam disabilitas yang memengaruhi kemampuan seseorang untuk melihat, mendengar, berbicara, bergerak, berpikir, dan merasakan.'
+authors:
+    - ocal
+    - alfi
 ---
 
 Topik ini membahas:
