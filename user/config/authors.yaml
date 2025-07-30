@@ -1,6 +1,31 @@
+rifat:
+  name: Rifat Najmi
+  role: Inisiator, Koordinator utama
+  bio: Rifat adalah desainer produk dan profesional aksesibilitas bersertifikasi CPACC dari IAAP. Ia menginisiasi situs ini untuk meningkatkan kesadaran tentang hak disabilitas dan aksesibilitas digital. Sehari-hari ia bekerja di sebuah startup health-tech, dan di waktu luangnya ia merawat kura-kura serta berkebun.
+  twitter: rifatnajmi
+  instagram: rifatnajmi
+  linkedin: 'https://linkedin.com/in/rifatnajmi'
+  website: 'https://rifatnajmi.com'
+  avatar: 'rifat.webp'
+nadija:
+  name: Nadija Herdwina
+  role: Koordinator strategi
+  bio: Nadija adalah seorang desainer produk. Ia mengenal aksesibilitas digital di tahun 2021, dan mulai mendokumentasikan hasil eksplorasinya di X dan Substack melalui akun @aksesibiliti pada tahun 2025, dengan harapan semakin banyak desainer yang mulai sadar, belajar, dan berani maju mengadvokasi aksesibilitas digital :)
+  twitter: aksesibiliti
+  instagram: nadija.design
+  linkedin: 'https://linkedin.com/in/nadijaherdwina'
+  website: 'https://substack.com/@aksesibiliti'
+  avatar: 'nadija.webp'
+ocal:
+  name: Muhammad Kautsar
+  role: Koordinator konten
+  bio: Ocal adalah seorang UX Research Writer di sebuah startup health-tech dengan minat tinggi pada layanan kesehatan, kesetaraan gender, dan dampak sosial. Ocal sedang mendalami bidang aksesibilitas digital dengan berkontribusi di Aksesibel.id sembari menulis kreatif dan kulineran di akhir pekan.
+  instagram: phascolarc
+  linkedin: 'https://www.linkedin.com/in/mkautsar/'
+  avatar: 'ocal.webp'
 fida:
   name: Alfida Zahra Firdausi
-  role: Konten
+  role: Kontributor
   bio: Alfida adalah desainer produk di dunia edutech dengan pengalaman lebih dari tiga tahun. Tidak hanya itu, ia juga berada di dunia monetisasi dan F&B. Di sela sibuknya, ia selalu kembali pada buku, musik, dan tulisan — tempat di mana pikirannya berpulang.
   twitter: pikselperfek
   instagram: alfidazf
@@ -9,7 +34,7 @@ fida:
   avatar: 'fida.webp'
 alya:
   name: Alya Dhia Zahra
-  role: Konten
+  role: Kontributor
   bio: Alya adalah UI/UX Designer sebuah perusahaan konsultasi di Jakarta. Ingin ikut membuat lebih banyak orang Indonesia menyadari pentingnya aksesibilitas digital. Mendalami topik ini di tahun 2024 melalui A11y Bootcamp Suarise & berpartisipasi sebagai mentor accessibility design challenge Suarise di tahun 2025. 
   twitter: ayladhia
   linkedin: 'https://www.linkedin.com/in/alyadz/'
@@ -17,7 +42,7 @@ alya:
   avatar: 'alya.webp'
 alfi:
   name: Alysia Alfi
-  role: Konten dan web dev
+  role: Kontributor
   bio: 
   twitter: 
   instagram: 
@@ -26,7 +51,7 @@ alfi:
   avatar: 'alfi.webp'
 anggun:
   name: Anggun Cahya Ningrum
-  role: Konten dan strategi
+  role: Kontributor
   bio: Anggun adalah product designer berlatar belakang ilmu komputer dengan pengalaman lebih dari 5 tahun. Ia berkomitmen meningkatkan aksesibilitas untuk mengurangi kesenjangan kesempatan di Indonesia. Menonton film dan membaca buku adalah cara Anggun bersantai di waktu luangnya.
   tiktok: anggun_cahyaaa
   instagram: angguncahya
@@ -35,7 +60,7 @@ anggun:
   avatar: 'anggun.webp'
 silvi:
   name: Arianti Silvia
-  role: Konten, strategi, dan ilustrasi 
+  role: Kontributor
   bio: Self-taught Product Designer (10+ YoE), CS background, former front-end developer. Designed every platforms and different businesses, for a few industries. Dog mom.
   twitter: riantisilvi
   instagram: riantisilvi
@@ -44,7 +69,7 @@ silvi:
   avatar: 'silvi.webp'
 dian:
   name: Dian Anindya
-  role: Konten dan strategi
+  role: Kontributor
   bio: 
   twitter: 
   instagram: 
@@ -53,8 +78,8 @@ dian:
   avatar: 'dian.webp'
 fadhil:
   name: Fadhil Abdillah
-  role: Strategi dan ilustrasi
-  bio: Fadhil here. 29 y.o with 7 year in digital produk designer. Product designer at AI Startup. This or next year want to pursue CPACC certificate like mas Rifat. 
+  role: Kontributor
+  bio: Fadhil here. 29 y.o with 7 year in digital produk designer. Product designer at AI Startup. This or next year want to pursue CPACC certificate like Mas Rifat. 
   twitter: fdmncfdmnc
   instagram: fadhilabdil
   linkedin: 'https://linkedin.com/in/fadhilabdillah'
@@ -62,7 +87,7 @@ fadhil:
   avatar: 'fadhil.webp'
 keziah:
   name: Keziah Cahya Virdayanti
-  role: Konten, strategi, dan ilustrasi
+  role: Kontributor
   bio: Keziah adalah seorang product designer & researcher yang saat ini sedang mengambil jeda karier untuk fokus mengasuh anak. Ia memiliki ketertarikan terhadap isu disabilitas dan bisa berbahasa isyarat Indonesia (BISINDO). Di sela kesibukannya sebagai ibu rumah tangga, ia gemar membaca, menulis, dan menonton film. 
   twitter: keziahcahya
   instagram: keziahcahya
@@ -71,38 +96,13 @@ keziah:
   avatar: 'keziah.webp'
 sekar:
   name: Madeleine Sekar Putri W
-  role: Konten dan webdev
+  role: Kontributor
   bio: 
   twitter: 
   instagram: 
   linkedin: 'https://linkedin.com/in/'
   website: 'https://.com'
   avatar: 'sekar.webp'
-ocal:
-  name: Muhammad Kautsar
-  role: Konten dan strategi
-  bio: UX Research Writer
-  instagram: phascolarc
-  linkedin: 'https://www.linkedin.com/in/mkautsar/'
-  avatar: 'ocal.webp'
-nadija:
-  name: Nadija Herdwina
-  role: Konten, strategi, dan ilustrasi
-  bio: Nadija adalah seorang desainer produk. Ia mengenal aksesibilitas digital di tahun 2021, dan mulai mendokumentasikan hasil eksplorasinya di X dan Substack melalui akun @aksesibiliti pada tahun 2025, dengan harapan semakin banyak desainer yang mulai sadar, belajar, dan berani maju mengadvokasi aksesibilitas digital :)
-  twitter: aksesibiliti
-  instagram: nadija.design
-  linkedin: 'https://linkedin.com/in/nadijaherdwina'
-  website: 'https://substack.com/@aksesibiliti'
-  avatar: 'nadija.webp'
-rifat:
-  name: Rifat Najmi
-  role: Inisiator, kontributor
-  bio: Rifat adalah desainer produk dan profesional aksesibilitas bersertifikasi CPACC dari IAAP. Ia menginisiasi situs ini untuk meningkatkan kesadaran tentang hak disabilitas dan aksesibilitas digital. Sehari-hari ia bekerja di sebuah startup health-tech, dan di waktu luangnya ia merawat kura-kura serta berkebun.
-  twitter: rifatnajmi
-  instagram: rifatnajmi
-  linkedin: 'https://linkedin.com/in/rifatnajmi'
-  website: 'https://rifatnajmi.com'
-  avatar: 'rifat.webp'
 sarai:
   name: Sarifadhilah Aziz
   role: Kontributor

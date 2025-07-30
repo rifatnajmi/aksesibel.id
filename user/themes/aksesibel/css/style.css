@@ -268,7 +268,8 @@ a:hover .card {background:var(--text-link-hover)}
 #quiz-summary-card.card {color:var(--text-on-color); background: linear-gradient(270deg, #0F6B33 0%, #1A5233 100%);}
 
 /*************************** CONTRIBUTORS ***************************/
-.card-contributor .card-body {margin:1em 0; padding:1em 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
+.card-contributor .card-body {margin:1em 0; padding:1em 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); font-size:.875em}
+.card-contributor h3 {font-size:1em; margin-bottom:0}
 .card-contributor .card-footer a {margin:.25em}
 .card-contributor img {max-width:128px; width:100%; height:auto;}
 

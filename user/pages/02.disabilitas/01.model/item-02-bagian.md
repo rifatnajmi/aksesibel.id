@@ -12,19 +12,13 @@ authors:
     - alya
 ---
 
-Tidak ada satupun model teoritis disabilitas yang sepenuhnya benar. Setiap model digunakan tergantung pada situasi dan kebutuhan. Konteks sangat penting dalam memilih pendekatan yang tepat.
+Model teoritis membantu kita memahami cara berpikir tentang suatu isu. Cara berpikir atau pandangan terhadap disabilitas mempengaruhi bagaimana seseorang memperlakukan individu dengan disabilitas, baik secara pribadi maupun sebagai bagian dari kelompok.
 
-Setiap model punya kelebihan dan kekurangan masing-masing. Sebagai contoh, model medis fokus pada kondisi fisik, sedangkan model ekonomi fokus pada berkurangnya kemampuan individu dalam mencari nafkah. Keduanya bisa dipakai bersamaan dan saling melengkapi.
-
-Ada organisasi yang memilih untuk menggabungkan dua model ini. Tujuannya agar penanganan bisa lebih menyeluruh. Dengan penggabungan ini, kebutuhan medis dan ekonomi dapat ditangani bersama.
-
-Bagian ini membahas beberapa model disabilitas yang sering digunakan. Model teoritis membantu kita memahami cara berpikir tentang suatu isu. Pandangan terhadap disabilitas mempengaruhi cara seseorang memperlakukan individu dengan disabilitas, baik secara pribadi maupun sebagai bagian dari kelompok.
-
-Dengan mengenal berbagai sudut pandang tentang disabilitas, kita jadi lebih paham asal-usul kebijakan dan sikap yang ada. Ini juga menjelaskan mengapa solusi yang dipilih bisa berbeda-beda. Pandangan ini berpengaruh pada hak, kesehatan, dan keterlibatan penyandang disabilitas dalam kehidupan sosial.
+Bagian ini akan membahas beberapa model teoritis disabilitas yang sering digunakan. Tidak ada satu model yang sepenuhnya benar. Setiap model memiliki kelebihan dan kekurangan, serta penggunaannya bergantung pada konteks dan kebutuhan.
 
 ## Berbagai model disabilitas
 
-Ada beberapa model teoritis terkait disabilitas, antara lain:
+Ada beberapa model teoritis disabilitas, namun di bagian ini hanya akan membahas:
 
 * [Model medis](/disabilitas/model/medis)
 * [Model sosial](/disabilitas/model/sosial)
