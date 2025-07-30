@@ -1,0 +1,57 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+{% include 'partials/sidebar.html.twig' %}
+<main class="col-lg-9 col-xl-10 min-vh-100">
+
+	<nav class="post-navigation justify-content-between mb-1" style="--bs-breadcrumb-divider: '/';" aria-label="Breadcrumb">
+		<ol class="breadcrumb breadcrumb-real">
+			<li class="breadcrumb-item"><a href="{{ base_url }}">Beranda</a></li>
+			<li class="breadcrumb-item visually-hidden" aria-current="page">{{ page.title }}</li>
+		</ol>
+	</nav>
+	<article class="row justify-content-center">
+		<header class="col-md-12">
+			<h1 class="post-title">
+				{{ page.title }}
+			</h1>
+			<p class="lead">{{ page.header.metadata.description }}</p>
+		</header>
+		<section id="utama" class="post-content col-md-12">
+			<ul class="row list-unstyled blog-list">
+				{% set collection = page.collection() %}
+				{% for child in collection %}
+				<li class="col-md-4 col-lg-3">
+					<a href="{{ child.url }}" class="card card-blog h-100">
+						{% if child.header.cover_image is iterable %}
+						{% set image_name = child.header.cover_image|keys|first %}
+						{% if child.media[image_name] %}
+						<img src="{{ child.media[image_name].cropZoom(800, 800).url }}" alt="" class="card-img-top" loading="lazy" />
+						{% else %}
+						<img src="{{ theme_url }}/images/placeholder.webp" alt="" class="card-img-top" loading="lazy" />
+						{% endif %}
+						{% endif %}
+						<article class="card-body d-flex justify-content-between">
+							<h2 class="h4">{{ child.title }}</h2>
+						</article>
+<!--
+						<div class="card-footer">
+							{% for category in child.header.taxonomy.category %}
+  <span class="badge">{{ category }}</span>
+{% endfor %}
+						</div>
+-->
+					</a>
+				</li>
+				{% else %}
+				<p>No blog posts found.</p>
+				{% endfor %}
+			</ul>
+			{% if config.plugins.pagination.enabled and collection.params.pagination %}
+			{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+			{% endif %}
+
+		</section>
+	</article>
+</main>
+
+{% endblock %}

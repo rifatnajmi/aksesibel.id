@@ -52,6 +52,13 @@
 						</a>
 						{% endif %}
 
+						{% if author.medium %}
+							<a href="{{ author.medium }}" target="_blank" class="btn btn-sm btn-social btn-medium">
+								<i class="fab fa-fw fa-medium" aria-hidden="true"></i>
+								<span class="fa-sr-only">Medium</span>
+						</a>
+						{% endif %}
+
 						{% if author.linkedin %}
 							<a href="{{ author.linkedin }}" target="_blank" class="btn btn-sm btn-social btn-linkedin">
 								<i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i>

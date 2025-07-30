@@ -1,0 +1,52 @@
+title: Blog Post
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+
+            header.title:
+              type: text
+              label: Title
+
+            header.slug:
+              type: text
+              label: Custom Slug
+              help: Override the default slug for this post
+              
+            header.cover_image:
+              type: file
+              label: Blog Cover
+              destination: 'self@'
+              accept:
+                - image/*
+              multiple: false
+              description: Pilih gambar cover untuk blog post ini
+
+            content:
+              type: markdown
+              label: Content
+
+            header.process:
+              type: fields
+              label: Processing
+              fields:
+                header.process.twig:
+                  type: toggle
+                  label: Process Twig
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool

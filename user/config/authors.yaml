@@ -30,7 +30,7 @@ fida:
   twitter: pikselperfek
   instagram: alfidazf
   linkedin: 'https://linkedin.com/in/alfidazf'
-  website: 'https://medium.com/@alfidazf'
+  medium: 'https://medium.com/@alfidazf'
   avatar: 'fida.webp'
 alya:
   name: Alya Dhia Zahra
@@ -38,7 +38,7 @@ alya:
   bio: Alya adalah UI/UX Designer sebuah perusahaan konsultasi di Jakarta. Ingin ikut membuat lebih banyak orang Indonesia menyadari pentingnya aksesibilitas digital. Mendalami topik ini di tahun 2024 melalui A11y Bootcamp Suarise & berpartisipasi sebagai mentor accessibility design challenge Suarise di tahun 2025. 
   twitter: ayladhia
   linkedin: 'https://www.linkedin.com/in/alyadz/'
-  website: 'https://medium.com/@ayladhia'
+  medium: 'https://medium.com/@ayladhia'
   avatar: 'alya.webp'
 alfi:
   name: Alysia Alfi
@@ -83,7 +83,7 @@ fadhil:
   twitter: fdmncfdmnc
   instagram: fadhilabdil
   linkedin: 'https://linkedin.com/in/fadhilabdillah'
-  website: 'https://medium.com/@works.fadhil'
+  medium: 'https://medium.com/@works.fadhil'
   avatar: 'fadhil.webp'
 keziah:
   name: Keziah Cahya Virdayanti
@@ -97,11 +97,10 @@ keziah:
 sekar:
   name: Madeleine Sekar Putri W
   role: Kontributor
-  bio: 
-  twitter: 
-  instagram: 
-  linkedin: 'https://linkedin.com/in/'
-  website: 'https://.com'
+  bio: Sekar adalah seorang software engineer yang sedang belajar mendalami isu aksesibilitas dan inklusivitas teknologi. Di waktu luang, Sekar suka menghabiskan waktunya untuk mempelajari berbagai hal baru dan mencoba ragam kuliner.
+  instagram: madeleinesekar
+  linkedin: 'https://linkedin.com/in/madeleinesekar'
+  medium: 'https://medium.com/@madeleine.sekar'
   avatar: 'sekar.webp'
 sarai:
   name: Sarifadhilah Aziz

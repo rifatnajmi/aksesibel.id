@@ -2,6 +2,21 @@
 	<nav class="container-fluid">
 		<a class="navbar-brand rounded" href="{{ base_url }}/"> <img src="{{ theme_url }}/images/logo.svg" alt="Aksesibel"> </a>
 		<ul class="navbar-nav justify-content-end flex-row flex-wrap flex-grow-1"> {% set current = page.route %}
+			
+			<li class="nav-item d-none d-xl-block">
+				<a href="{{ base_url }}/cerita" class="nav-link {% if current starts with '/cerita' %}active{% endif %}">Cerita</a>
+			</li>
+			<li class="nav-item d-none d-xl-block">
+				<a href="{{ base_url }}/kuis" class="nav-link {% if current starts with '/kuis' %}active{% endif %}">Kuis</a>
+			</li>
+			<li class="nav-item d-none d-xl-block">
+				<a href="{{ base_url }}/glosarium" class="nav-link {% if current starts with '/glosarium' %}active{% endif %}">Glosarium</a>
+			</li>
+			
+			<li class="nav-item py-2 py-lg-1">
+				<div class="vr d-none d-xl-flex h-100 mx-lg-2 text-white"></div>
+			</li>
+			
 			<li class="nav-item d-none d-xl-block">
 				<a href="{{ base_url }}/tentang" class="nav-link {% if current starts with '/tentang' %}active{% endif %}">Tentang</a>
 			</li>

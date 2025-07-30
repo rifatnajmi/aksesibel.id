@@ -267,6 +267,14 @@ a:hover .card {background:var(--text-link-hover)}
 
 #quiz-summary-card.card {color:var(--text-on-color); background: linear-gradient(270deg, #0F6B33 0%, #1A5233 100%);}
 
+
+.blog-list li {border-bottom:none}
+.list-group-custom li {border:none; background:none; padding:.5rem}
+.card-blog img {margin-bottom:.5em}
+/*.card-blog .card-footer {margin-top:.5em; padding-top:.5em; border-top:1px solid var(--border)}*/
+.card-blog .badge {background:var(--text); color:var(--body); font-weight:normal}
+
+.related {top: 4em}
 /*************************** CONTRIBUTORS ***************************/
 .card-contributor .card-body {margin:1em 0; padding:1em 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); font-size:.875em}
 .card-contributor h3 {font-size:1em; margin-bottom:0}
@@ -294,8 +302,9 @@ a:hover .card {background:var(--text-link-hover)}
 
 .btn-gumroad:focus, .btn-saweria:focus, .btn-trakteer:focus {background:#1E8500!important; color:#212223)!important}
 
-.btn-twitter {background:#000; color:#FFF}
+.btn-twitter, .btn-medium {background:#000; color:#FFF}
 .btn-instagram {background:#e1306c; color:#FFF}
+.btn-substack {background:#FF7731; color:#FFF}
 .btn-linkedin {background:#0a66c2; color:#FFF}
 .btn-tiktok {background:#FE2C55; color:#FFF}
 .btn-social:hover, .btn-social:focus {background:#7C6B04!important; color:#212223!important}
@@ -372,7 +381,7 @@ a:hover .card {background:var(--text-link-hover)}
 	--border: #C7D4DD;
 	--brand: #0F6B33;
 	--text: #212223;
-	--text-mute: #909294;
+	--text-mute: #67696A;
 	--text-on-color: #F1F1F3;
 	--text-link: var(--brand);
 	--text-link-hover: #B3E244;
@@ -392,7 +401,7 @@ body[data-theme="light"] {
 	--border: #C7D4DD;
 	--brand: #0F6B33;
 	--text: #212223;
-	--text-mute: #909294;
+	--text-mute: #67696A;
 	--text-on-color: #F1F1F3;
 	--text-link: var(--brand);
 	--text-link-hover: #B3E244;

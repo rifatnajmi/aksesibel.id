@@ -1,0 +1,108 @@
+title: Blog
+
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.title:
+              type: text
+              label: Title
+
+            header.template:
+              type: hidden
+              default: blog
+
+            header.content:
+              type: section
+              title: Content Options
+              underline: true
+
+              fields:
+                header.content.items:
+                  type: text
+                  label: Items
+                  default: '@self.children'
+
+                header.content.lang:
+                  type: text
+                  label: Language
+                  default: all
+
+                header.content.limit:
+                  type: number
+                  label: Limit
+                  default: 10
+
+                header.content.order.by:
+                  type: select
+                  label: Order By
+                  default: date
+                  options:
+                    folder: Folder
+                    title: Title
+                    date: Date
+
+                header.content.order.dir:
+                  type: select
+                  label: Order Direction
+                  default: desc
+                  options:
+                    asc: Ascending
+                    desc: Descending
+
+                header.content.pagination:
+                  type: toggle
+                  label: Enable Pagination
+                  highlight: 1
+                  default: 1
+                  options:
+                    true: Yes
+                    false: No
+
+            header.published:
+              type: toggle
+              label: Published
+              highlight: 1
+              default: 1
+              options:
+                true: Yes
+                false: No
+
+            header.cache_enable:
+              type: toggle
+              label: Enable Caching
+              highlight: 0
+              default: 0
+              options:
+                true: Yes
+                false: No
+
+        options:
+          type: tab
+          title: Options
+
+          fields:
+            header.admin.children_display_order:
+              type: select
+              label: Children Display Order
+              default: collection
+              options:
+                folder: Folder
+                collection: Collection
+
+            header.child_type:
+              type: text
+              label: Default Child Type
+              default: blog-item
