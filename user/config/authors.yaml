@@ -43,11 +43,10 @@ alya:
 alfi:
   name: Alysia Alfi
   role: Kontributor
-  bio: 
-  twitter: 
-  instagram: 
-  linkedin: 'https://linkedin.com/in/'
-  website: 'https://.com'
+  bio: Building cool stuff on the web, one component at a time. Always down to chat about the latest in tech or help debug your div that`s mysteriously not centering.
+  instagram: alysialfi
+  linkedin: 'https://linkedin.com/in/alysialfi'
+  medium: 'https://alysialfi.medium.com/'
   avatar: 'alfi.webp'
 anggun:
   name: Anggun Cahya Ningrum
@@ -70,11 +69,11 @@ silvi:
 dian:
   name: Dian Anindya
   role: Kontributor
-  bio: 
+  bio: Individu yang suka mengerjakan hal-hal kreatif, eksperimen, dan meriset untuk bantu sekitar. Paling senang ketika membuat produk yang bisa bermanfaat dan dipakai oleh banyak orang.
   twitter: 
-  instagram: 
-  linkedin: 'https://linkedin.com/in/'
-  website: 'https://.com'
+  instagram: dianinprmdt
+  linkedin: 'https://linkedin.com/in/diananindyapramudito'
+  website: 'https://diananindya.com'
   avatar: 'dian.webp'
 fadhil:
   name: Fadhil Abdillah
