@@ -20,7 +20,7 @@
 			<ul class="row list-unstyled blog-list">
 				{% set collection = page.collection() %}
 				{% for child in collection %}
-				<li class="col-md-4 col-lg-3">
+				<li class="col-md-6 col-lg-4 col-xl-3">
 					<a href="{{ child.url }}" class="card card-blog h-100">
 						{% if child.header.cover_image is iterable %}
 						{% set image_name = child.header.cover_image|keys|first %}

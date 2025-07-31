@@ -1,7 +1,7 @@
 {% extends 'partials/base.html.twig' %}
 {% block content %}
 {% include 'partials/sidebar.html.twig' %}
-<main class="col-lg-9 col-xl-8 min-vh-100">
+<main class="col-lg-9 col-xl-6 min-vh-100">
 
 	<nav class="post-navigation justify-content-between mb-1" style="--bs-breadcrumb-divider: '/';" aria-label="Breadcrumb">
 		<ol class="breadcrumb breadcrumb-real">
@@ -16,19 +16,20 @@
 				{{ page.title }}
 			</h1>
 			<p class="lead">{{ page.header.metadata.description }}</p>
+			{% include 'partials/post-meta2.html.twig' %}
 		</header>
 		<section id="utama" class="post-content col-md-12">
 			{% if page.header.cover_image is iterable %}
 			{% set image_name = page.header.cover_image|keys|first %}
 			{% if page.media[image_name] %}
-			<img src="{{ page.media[image_name].url }}" alt="{{ page.title }}" class="blog-cover mb-5 rounded" />
+			<img src="{{ page.media[image_name].url }}" alt="{{ page.title }}" class="blog-cover mb-1 rounded" />
 			{% endif %}
 			{% endif %}
 			{{ page.content|markdown }}
 		</section>
 	</article>
 </main>
-<aside class="d-none d-xl-block col-xl-2 related">
+<aside class="d-none d-xl-block col-xl-4 related">
 	<div class="sticky-top">
 		{% set all_posts = page.find('/cerita').children.visible %}
 		{% set other_posts = [] %}
@@ -37,9 +38,9 @@
 		{% endfor %}
 		{% set random_posts = other_posts|slice(0, other_posts|length)|sort|slice(0, 2) %}
 		<h2 class="h4 mb-1">Cerita Lain</h2>
-		<ul class="list-unstyled">
+		<ul class="row list-unstyled">
 			{% for post in random_posts %}
-			<li class="mb-1">
+			<li class="col-md-6 mb-1">
 				<a href="{{ post.url }}" class="card card-blog">
 					{% if post.header.cover_image is iterable %}
 					{% set image_name = post.header.cover_image|keys|first %}

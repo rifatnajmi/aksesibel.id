@@ -201,6 +201,8 @@ a:hover, .post-content a:hover, footer a:hover {background:var(--text-link-hover
 .post-meta a, post-content a, .post-content li a {font-weight:bold!important}
 
 .post-meta {font-size:.875em; padding:1em 0; margin:1em 0; border-bottom:1px solid var(--border); border-top:1px solid var(--border)}
+.post-meta dt {font-size:.75em}
+.post-meta dt .fal {font-size:1em}
 
 .post-attr {padding:1em; border-radius:.5em; background:var(--border)}
 

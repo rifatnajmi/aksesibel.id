@@ -1,32 +1,38 @@
-
-
 <div class="row post-meta">
-{% set authors_data = grav.config.get('authors') %}
-{% set authors = page.header.authors is iterable ? page.header.authors : [page.header.authors] %}
-{% if authors and authors[0] is not empty %}
+	{% set authors_data = grav.config.get('authors') %}
+	{% set authors = page.header.authors is iterable ? page.header.authors : [page.header.authors] %}
+	{% if authors and authors[0] is not empty %}
 
-	<div class="col-md-6 mt-0">
-		<i class="fal fa-users" aria-hidden="true"></i><br>		
-		Kontributor:
-		<ol class="contributor-list list-inline">
-			{% for id in authors %}
+	<dl class="col-md-6 my-0">
+		<dt>
+			<i class="fal fa-users" aria-hidden="true"></i><br>
+			Kontributor:
+		</dt>
+		<dd>
+			<ol class="contributor-list list-inline">
+				{% for id in authors %}
 				{% set author = authors_data[id] ?? null %}
 				<li class="list-inline-item">
 					{% if author %}
-						<a href="{{ base_url }}/kontributor/#{{ id }}">{{ author.name }}</a>
+					<a href="{{ base_url }}/kontributor/#{{ id }}">{{ author.name }}</a>
 					{% else %}
-						{{ id }} (tidak ditemukan)
+					{{ id }} (tidak ditemukan)
 					{% endif %}
 				</li>
-			{% endfor %}
-		</ol>
-	</div>
-{% else %}
+				{% endfor %}
+			</ol>
+		</dd>
+	</dl>
+	{% else %}
 
-{% endif %}
+	{% endif %}
 
-	<div class="col-md-6 mt-0">
-		<i class="fal fa-calendar" aria-hidden="true"></i><br>
-		Terakhir diperbarui:<br>{{ page.modified|date("d M Y") }}
-	</div>
+	<dl class="col-md-6 my-0">
+		<dt>
+			<i class="fal fa-calendar" aria-hidden="true"></i><br>
+			Terakhir diperbarui:</dt>
+		<dd>
+			{{ page.modified|date("d M Y") }}
+		</dd>
+	</dl>
 </div>

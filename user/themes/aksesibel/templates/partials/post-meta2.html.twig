@@ -1,0 +1,22 @@
+<div class="row post-meta">
+
+	
+	<dl class="col-md-6 my-0">
+		<dt>
+			<i class="fal fa-folder" aria-hidden="true"></i><br>
+			Kondisi disabilitas/neurodivergen:</dt>
+		<dd>
+			{{ page.header.taxonomy.category|join(', ') }}
+		</dd>
+	</dl>
+	
+
+	<dl class="col-md-6 my-0">
+		<dt>
+			<i class="fal fa-calendar" aria-hidden="true"></i><br>
+			Tanggal dikirim:</dt>
+		<dd>
+			{{ page.modified|date("d M Y") }}
+		</dd>
+	</dl>
+</div>
