@@ -18,38 +18,56 @@
 			<a href="https://aksesibel.id/bercerita" class="btn btn-yellow">Kirimkan ceritamu</a>
 		</header>
 		<hr class="my-4">
-<section id="utama" class="post-content col-md-12">
-	<ul class="row list-unstyled blog-list">
-		{% set collection = page.collection().order('date', 'desc') %}
-		{% for child in collection %}
-		<li class="col-md-6 col-lg-4 ">
-			<a href="{{ child.url }}" class="card card-blog h-100">
-				{% if child.header.cover_image is iterable %}
-				{% set image_name = child.header.cover_image|keys|first %}
-				{% if child.media[image_name] %}
-				<img src="{{ child.media[image_name].cropZoom(800, 800).url }}" alt="" class="card-img-top" loading="lazy" />
+		<section id="utama" class="post-content col-md-12">
+			<ul class="row list-unstyled blog-list">
+				{% set all_items = page.children.published.order('date', 'desc') %}
+				{% set items_per_page = 12 %}
+				{% set current_page = uri.param('page')|default(1) %}
+				{% set total_pages = (all_items|length / items_per_page)|round(0, 'ceil') %}
+				{% set start = (current_page - 1) * items_per_page %}
+				{% set collection = all_items.slice(start, items_per_page) %}
+
+				{# Create manual pagination object #}
+				{% set manual_pagination = {
+					'current': current_page,
+					'total_pages': total_pages,
+					'hasNext': current_page < total_pages,
+					'hasPrev': current_page > 1,
+					'prevNumber': current_page - 1,
+					'nextNumber': current_page + 1,
+					'pages': range(1, total_pages)
+				} %}
+
+				{% for child in collection %}
+
+				<li class="col-md-6 col-xl-4 ">
+					<a href="{{ child.url }}" class="card card-blog h-100">
+						{% if child.header.cover_image is iterable %}
+						{% set image_name = child.header.cover_image|keys|first %}
+						{% if child.media[image_name] %}
+						<img src="{{ child.media[image_name].cropZoom(800, 800).url }}" alt="" class="card-img-top" loading="lazy" />
+						{% else %}
+						<img src="{{ theme_url }}/images/placeholder.webp" alt="" class="card-img-top" loading="lazy" />
+						{% endif %}
+						{% endif %}
+						<article class="card-body d-flex justify-content-between">
+							<h2 class="h4">{{ child.title }}</h2>
+						</article>
+						<div class="card-footer">
+							{% for category in child.header.taxonomy.category %}
+							<span class="badge mx-1">{{ category }}</span>
+							{% endfor %}
+						</div>
+					</a>
+				</li>
 				{% else %}
-				<img src="{{ theme_url }}/images/placeholder.webp" alt="" class="card-img-top" loading="lazy" />
-				{% endif %}
-				{% endif %}
-				<article class="card-body d-flex justify-content-between">
-					<h2 class="h4">{{ child.title }}</h2>
-				</article>
-				<div class="card-footer">
-					{% for category in child.header.taxonomy.category %}
-<span class="badge mx-1">{{ category }}</span>
-{% endfor %}
-				</div>
-			</a>
-		</li>
-		{% else %}
-		<p>No blog posts found.</p>
-		{% endfor %}
-	</ul>
-	{% if config.plugins.pagination.enabled and collection.params.pagination %}
-	{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
-	{% endif %}
-</section>
+				<p>No blog posts found.</p>
+				{% endfor %}
+			</ul>
+			{% if manual_pagination.total_pages > 1 %}
+			{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':manual_pagination} %}
+			{% endif %}
+		</section>
 	</article>
 </main>
 

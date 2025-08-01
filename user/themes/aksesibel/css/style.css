@@ -326,6 +326,49 @@ a:hover .card {background:var(--text-link-hover)}
 .alert-danger {background:#C92508}
 .alert-success {background:#0F6B33}
 .alert-warning {background:#FED800}
+
+/*************************** PAGINATION ***************************/
+/*
+.pagination li {border:none}
+.pagination .active, .pagination .disabled, .pagination .page-link {padding:.25em .75em; border-radius:.25em; font-size:1em;}
+.pagination .page-link {border:none; color:var(--accent-green)}
+.pagination .active {color:var(--text); font-weight:bold; background:var(--border)}
+.pagination .page-link:hover {background:var(--accent-green)}
+.pagination .disabled {color:var(--text-mute)!important; background:none!important}
+*/
+
+.pagination{
+    --bs-pagination-padding-x: .75rem;
+    --bs-pagination-padding-y: 0.375rem;
+    --bs-pagination-font-size: 1rem;
+    --bs-pagination-color: var(--text);
+    --bs-pagination-bg: var(--accent-green);
+    --bs-pagination-border-width: 0;
+    --bs-pagination-border-color: var(--border);
+    --bs-pagination-border-radius: .25em;
+    --bs-pagination-hover-color: var(--text);
+    --bs-pagination-hover-bg: var(--accent-yellow);
+    --bs-pagination-hover-border-color: var(--border);
+    --bs-pagination-focus-color: var(--bs-link-hover-color);
+    --bs-pagination-focus-bg: var(--bs-secondary-bg);
+    --bs-pagination-focus-box-shadow: none;
+    --bs-pagination-active-color: var(--text);
+    --bs-pagination-active-bg: none;
+    --bs-pagination-active-border-color: none;
+    --bs-pagination-disabled-color: var(--text-mute);
+    --bs-pagination-disabled-bg: none;
+    --bs-pagination-disabled-border-color: var(--bs-border-color);
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pagination li {border:none}
+.pagination .page-item {margin:.5em .5em}
+.pagination a {color:var(--body); border-radius:.25em}
+.pagination a:hover {background:var(--accent-yellow); color:var(--body)}
+.pagination a:focus {outline:2px solid var(--accent-green)}
+
 /*************************** QUERY ***************************/
 
 @media (max-width: 575.98px) {

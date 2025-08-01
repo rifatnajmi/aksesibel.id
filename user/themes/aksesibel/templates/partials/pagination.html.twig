@@ -1,0 +1,52 @@
+{% set pagination = pagination|default(manual_pagination) %}
+{% set base_url = base_url|default(page.url) %}
+{% if pagination.total_pages > 1 %}
+<nav aria-label="Page navigation" class="mt-2">
+	<ul class="pagination pagination-xl justify-content-center">
+		{% if pagination.hasPrev %}
+		{% set url = base_url ~ (pagination.current > 2 ? '/page:' ~ pagination.prevNumber : '') %}
+		<li class="page-item">
+			<a rel="prev" href="{{ url }}" class="page-link">
+				<i class="fal fa-arrow-left fa-fw" title="Previous Page"></i>
+			</a>
+		</li>
+		{% else %}
+		<li class="page-item disabled">
+			<span class="page-link">
+				<i class="fal fa-arrow-left fa-fw" title="Previous Page"></i>
+			</span>
+		</li>
+		{% endif %}
+
+		{% for page_num in pagination.pages %}
+		{% if pagination.current == page_num %}
+		<li class="page-item active px-2" aria-current="page">
+			{{ page_num }}
+		</li>
+		{% else %}
+		{% set url = base_url ~ (page_num > 1 ? '/page:' ~ page_num : '') %}
+		<li class="page-item">
+			<a href="{{ url }}" class="page-link">
+				{{ page_num }}
+			</a>
+		</li>
+		{% endif %}
+		{% endfor %}
+
+		{% if pagination.hasNext %}
+		{% set url = base_url ~ '/page:' ~ pagination.nextNumber %}
+		<li class="page-item">
+			<a rel="next" href="{{ url }}" class="page-link">
+				<i class="fal fa-arrow-right fa-fw" title="Next Page"></i>
+			</a>
+		</li>
+		{% else %}
+		<li class="page-item disabled">
+			<span class="page-link">
+				<i class="fal fa-arrow-right fa-fw" title="Next Page"></i>
+			</span>
+		</li>
+		{% endif %}
+	</ul>
+</nav>
+{% endif %}
