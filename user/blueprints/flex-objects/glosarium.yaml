@@ -76,14 +76,17 @@ config:
     collection: 'Grav\Common\Flex\Types\Generic\GenericCollection'
     # Index class to be used, works as a quick database-like lookup index
     index: 'Grav\Common\Flex\Types\Generic\GenericIndex'
-    indexed:
-      - title
+    # PERUBAHAN: Tambahkan key untuk identifikasi unik
+    key: slug
     storage:
-        class: 'Grav\Framework\Flex\Storage\SimpleStorage'
-        options:
-          formatter:
-            class: 'Grav\Framework\File\Formatter\JsonFormatter'
-          folder: user-data://flex-objects/glosarium.json
+      # PERUBAHAN: Ganti dari SimpleStorage ke FolderStorage
+      class: 'Grav\Framework\Flex\Storage\FolderStorage'
+      options:
+        formatter:
+          # PERUBAHAN: Ganti ke YamlFormatter untuk konsistensi
+          class: 'Grav\Framework\File\Formatter\YamlFormatter'
+        # PERUBAHAN: Ganti ke folder structure
+        folder: user-data://flex-objects/glosarium
     search:
       # Search options
       options:
@@ -92,10 +95,20 @@ config:
       fields:
         - title
         - definition
+        - slug
 
 form:
   validation: loose
   fields:
+    # TAMBAHAN: Field slug untuk identifier unik
+    slug:
+      type: text
+      label: Slug
+      classes: fancy
+      help: "URL-friendly identifier (otomatis dari judul jika kosong)"
+      validate:
+        pattern: '^[a-z0-9-]*$'
+        message: 'Slug harus huruf kecil, angka, dan tanda hubung saja'
     title:
       type: text
       label: Judul

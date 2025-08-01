@@ -16,57 +16,105 @@
 		</header>
 		<section class="post-content col-md-12 content">
 			<div class="glosarium-container">
-
 				{% set directory = grav.flex_objects.getDirectory('glosarium') %}
 				{% set collection = directory.getCollection() %}
-				{% set sorted = collection|sort %}
-
+				
 				{% if collection is not empty %}
+				{# Kelompokkan berdasarkan huruf pertama #}
 				{% set grouped = {} %}
 				{% set numeric_group = [] %}
-
+				
 				{% for object in collection %}
-				{% set first = object.title|first|upper %}
-				{% if first matches '/[0-9]/' %}
-				{% set numeric_group = numeric_group|merge([object]) %}
-				{% else %}
-				{% if grouped[first] is not defined %}
-				{% set grouped = grouped|merge({(first): []}) %}
-				{% endif %}
-				{% set grouped = grouped|merge({(first): grouped[first]|merge([object])}) %}
-				{% endif %}
+					{% set first = object.title|first|upper %}
+					{% if first matches '/[0-9]/' %}
+						{% set numeric_group = numeric_group|merge([object]) %}
+					{% else %}
+						{% if grouped[first] is not defined %}
+							{% set grouped = grouped|merge({(first): []}) %}
+						{% endif %}
+						{% set grouped = grouped|merge({(first): grouped[first]|merge([object])}) %}
+					{% endif %}
 				{% endfor %}
-
-
+				
+				{# Sort numeric group by title - alternatif untuk Twig lama #}
+				{% set sorted_numeric = [] %}
+				{% set titles_numeric = [] %}
+				{% for obj in numeric_group %}
+					{% set titles_numeric = titles_numeric|merge([obj.title]) %}
+				{% endfor %}
+				{% set titles_numeric = titles_numeric|sort %}
+				{% for title in titles_numeric %}
+					{% for obj in numeric_group %}
+						{% if obj.title == title %}
+							{% set sorted_numeric = sorted_numeric|merge([obj]) %}
+						{% endif %}
+					{% endfor %}
+				{% endfor %}
+				{% set numeric_group = sorted_numeric %}
+				
+				{# Sort each alphabetical group by title - alternatif untuk Twig lama #}
+				{% set sorted_grouped = {} %}
+				{% for letter, objects in grouped %}
+					{% set sorted_objects = [] %}
+					{% set titles = [] %}
+					{% for obj in objects %}
+						{% set titles = titles|merge([obj.title]) %}
+					{% endfor %}
+					{% set titles = titles|sort %}
+					{% for title in titles %}
+						{% for obj in objects %}
+							{% if obj.title == title %}
+								{% set sorted_objects = sorted_objects|merge([obj]) %}
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+					{% set sorted_grouped = sorted_grouped|merge({(letter): sorted_objects}) %}
+				{% endfor %}
+				{% set grouped = sorted_grouped %}
+				
+				{# Buat daftar lengkap abjad A-Z #}
+				{% set full_alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'] %}
+				
+				{# Navigation bar dengan semua abjad #}
 				<div class="alphabet-nav my-2">
 					{% if numeric_group is not empty %}
-					<a href="#numeric" class="btn btn-primary btn-sm me-1">#</a>
+						<a href="#numeric" class="btn btn-primary btn-sm me-1">#</a>
 					{% endif %}
-					{% for letter in grouped|keys|sort %}
-					<a href="#{{ letter|lower }}" class="btn btn-primary btn-sm me-1">{{ letter }}</a>
+					{% for letter in full_alphabet %}
+						{% if grouped[letter] is defined %}
+							<a href="#{{ letter|lower }}" class="btn btn-primary btn-sm me-1">{{ letter }}</a>
+						{% else %}
+							<span class="btn btn-outline-secondary btn-sm me-1 disabled" title="Tidak ada entri untuk {{ letter }}">{{ letter }}</span>
+						{% endif %}
 					{% endfor %}
 				</div>
-
+				
+				{# Display numeric group first #}
 				{% if numeric_group is not empty %}
-				<div id="numeric" class="group-section mt-2">
-					<h2>#</h2>
-					{% for obj in numeric_group %}
-					{% include 'partials/glosarium-item.html.twig' with { object: obj } %}
-					{% endfor %}
-				</div>
-				<hr>
+					<div id="numeric" class="group-section mt-2">
+						<h2>#</h2>
+						{% for obj in numeric_group %}
+							{% include 'partials/glosarium-item.html.twig' with { object: obj } %}
+						{% endfor %}
+					</div>
+					<hr>
 				{% endif %}
-
-				{% for letter, objects in grouped %}
-				<div id="{{ letter|lower }}" class="group-section mt-2">
-					<h2>{{ letter }}</h2>
-					{% for obj in objects %}
-					{% include 'partials/glosarium-item.html.twig' with { object: obj } %}
-					{% endfor %}
-				</div>
-				<hr>
+				
+				{# Display all alphabet letters, even empty ones #}
+				{% for letter in full_alphabet %}
+					<div id="{{ letter|lower }}" class="group-section mt-2">
+						<h2>{{ letter }}</h2>
+						{% if grouped[letter] is defined %}
+							{% for obj in grouped[letter] %}
+								{% include 'partials/glosarium-item.html.twig' with { object: obj } %}
+							{% endfor %}
+						{% else %}
+							<p class="text-muted fst-italic">Belum ada entri untuk huruf {{ letter }}.</p>
+						{% endif %}
+					</div>
+					{% if not loop.last %}<hr>{% endif %}
 				{% endfor %}
-
+				
 				{% else %}
 				<p>Tidak ada entri glosarium.</p>
 				{% endif %}
@@ -74,5 +122,4 @@
 		</section>
 	</article>
 </main>
-
 {% endblock %}
