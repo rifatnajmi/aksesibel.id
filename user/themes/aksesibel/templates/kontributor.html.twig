@@ -42,8 +42,36 @@
 				{% endif %}
 			{% endfor %}
 			
-			{# Merge in priority order: Inisiator first, then other koordinators, then contributors #}
-			{% set sorted_authors = inisiator|merge(koordinator_strategi)|merge(koordinator_konten)|merge(contributors) %}
+			{# Simple alphabetical sorting using a more efficient approach #}
+			{% set contributors_sorted = [] %}
+			{% set names_list = [] %}
+			
+			{# Extract names for comparison #}
+			{% for contributor in contributors %}
+				{% set names_list = names_list|merge([contributor.name]) %}
+			{% endfor %}
+			
+			{# Create sorted list by iterating through alphabet #}
+			{% set alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'] %}
+			
+			{% for letter in alphabet %}
+				{% for contributor in contributors %}
+					{% if contributor.name|first|upper == letter %}
+						{% set contributors_sorted = contributors_sorted|merge([contributor]) %}
+					{% endif %}
+				{% endfor %}
+			{% endfor %}
+			
+			{# Add any contributors that don't start with A-Z #}
+			{% for contributor in contributors %}
+				{% set first_char = contributor.name|first|upper %}
+				{% if first_char not in alphabet %}
+					{% set contributors_sorted = contributors_sorted|merge([contributor]) %}
+				{% endif %}
+			{% endfor %}
+			
+			{# Merge in priority order: Inisiator first, then other koordinators, then sorted contributors #}
+			{% set sorted_authors = inisiator|merge(koordinator_strategi)|merge(koordinator_konten)|merge(contributors_sorted) %}
 			
 			{% for author in sorted_authors %}
 			<div class="col-md-6 col-xl-4">
