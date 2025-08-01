@@ -1,40 +1,71 @@
 <aside class="post-attr">
 	<h2 class="h5">Saran atribusi:</h2>
-
-	{% set authors_data = grav.config.get('authors') %}
-	{% set authors = page.header.authors is iterable ? page.header.authors : [page.header.authors] %}
-	{% set author_names = [] %}
-
-	{% if authors and authors[0] is not empty %}
-	{% for id in authors %}
-	{% set author = authors_data[id] ?? null %}
-	{% if author and author.name %}
-	{% set author_names = author_names|merge([author.name]) %}
-	{% else %}
-	{% set author_names = author_names|merge([id ~ ' (tidak ditemukan)']) %}
-	{% endif %}
-	{% endfor %}
-
-	{# Format daftar nama penulis #}
-	{% if author_names|length == 1 %}
-	{{ author_names[0] }}
-	{% elseif author_names|length == 2 %}
-	{{ author_names[0] }} &amp; {{ author_names[1] }}
-	{% else %}
-	{% for name in author_names %}
-	{% if loop.last %}
-	&amp; {{ name }}
-	{% elseif loop.index == author_names|length - 1 %}
-	{{ name }}
-	{% else %}
-	{{ name }},
-	{% endif %}
-	{% endfor %}
-	{% endif %}
-
-	{% else %}
-	radikal studio
-	{% endif %}
-
-	({{ page.date|date("Y") }}). <em>{{ page.title }}</em>. Aksesibel. <a href="{{ page.url }}">{{ page.url }}</a>
+	<span id="copyText">
+		{% set authors_flex = grav.get('flex').collection('authors') %}
+		{% set authors = page.header.authors is iterable ? page.header.authors : [page.header.authors] %}
+		{% set author_names = [] %}
+		{% if authors and authors[0] is not empty %}
+		{% for author_slug in authors %}
+		{# Loop search method - mencari author berdasarkan slug #}
+		{% set author = null %}
+		{% for flex_author in authors_flex %}
+			{% if flex_author.slug == author_slug %}
+				{% set author = flex_author %}
+			{% endif %}
+		{% endfor %}
+		
+		{% if author and author.name %}
+		{% set author_names = author_names|merge([author.name]) %}
+		{% else %}
+		{% set author_names = author_names|merge([author_slug ~ ' (tidak ditemukan)']) %}
+		{% endif %}
+		{% endfor %}
+		{% if author_names|length == 1 %}
+		{{ author_names[0] }}
+		{% elseif author_names|length == 2 %}
+		{{ author_names[0] }} &amp; {{ author_names[1] }}
+		{% else %}
+		{% for name in author_names %}
+		{% if loop.last %}
+		&amp; {{ name }}
+		{% elseif loop.index == author_names|length - 1 %}
+		{{ name }}
+		{% else %}
+		{{ name }},
+		{% endif %}
+		{% endfor %}
+		{% endif %}
+		{% else %}
+		radikal studio
+		{% endif %}
+		({{ page.date|date("Y") }}). <em>{{ page.title }}</em>. Aksesibel. {{ base_url_absolute ~ uri.path }}
+	</span>
+<button id="copyBtn" onclick="copyText()" class="btn btn-yellow mt-1" style="display:block">
+  Salin
+</button>
+<div id="copyStatus"
+     class="alert alert-success mt-1"
+     style="display: none;"
+     role="status"
+     aria-live="polite">
+  <i class="fal fa-check mr-1" aria-hidden="true"></i>
+  <span id="copyMsg">Teks berhasil tersalin!</span>
+</div>
+<script>
+  function copyText() {
+    const text = document.getElementById("copyText").innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const status = document.getElementById("copyStatus");
+      status.style.display = "block";
+      const msg = document.getElementById("copyMsg");
+      msg.textContent = ""; // reset
+      setTimeout(() => {
+        msg.textContent = "Teks berhasil tersalin!";
+      }, 10);
+      setTimeout(() => {
+        status.style.display = "none";
+      }, 3000);
+    });
+  }
+</script>
 </aside>

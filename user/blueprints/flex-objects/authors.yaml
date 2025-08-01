@@ -1,0 +1,188 @@
+title: Authors
+description: Data kontributor dan tim Aksesibel.id
+type: flex-objects
+
+# Flex Configuration
+config:
+  # Administration Configuration
+  admin:
+    # Admin router (optional)
+    router:
+      path: "/authors"
+    # Admin menu (optional)
+    menu:
+      list:
+        route: "/authors"
+        title: Authors
+        icon: fa-users
+        # Authorization to collection admin
+        authorize: ["admin.authors.list", "admin.super"]
+        # Priority -10 .. 10 (highest goes up)
+        priority: 2
+    # Admin template type / folder
+    template: default
+    # Permissions
+    permissions:
+      # Primary permissions
+      admin.authors:
+        type: crudpl
+        label: Authors
+    # List view
+    list:
+      title: name
+      fields:
+        name:
+        role:
+        twitter:
+        instagram:
+        linkedin:
+    # Edit View
+    edit:
+      title:
+        template: "{{ object.name ?? 'Author Baru' }}"
+    # Preview View
+    preview:
+      enabled: false
+    # Data Export
+    export:
+      enabled: true
+      method: "jsonSerialize"
+      formatter:
+        class: 'Grav\Framework\File\Formatter\YamlFormatter'
+      filename: "authors"
+  
+  # Site Configuration
+  site:
+    templates:
+      collection:
+        # Lookup for the template layout files for collections of objects
+        paths:
+          - "flex/{TYPE}/collection/{LAYOUT}{EXT}"
+      object:
+        # Lookup for the template layout files for objects
+        paths:
+          - "flex/{TYPE}/object/{LAYOUT}{EXT}"
+      defaults:
+        # Default template {TYPE}; overridden by filename of this blueprint if template folder exists
+        type: authors
+        # Default template {LAYOUT}; can be overridden in render calls (usually Twig in templates)
+        layout: default
+  
+  # Data Configuration
+  data:
+    # Object class to be used, allowing custom methods for the object
+    object: 'Grav\Common\Flex\Types\Generic\GenericObject'
+    # Collection class to be used, allowing custom methods for the collections
+    collection: 'Grav\Common\Flex\Types\Generic\GenericCollection'
+    # Index class to be used, works as a quick database-like lookup index
+    index: 'Grav\Common\Flex\Types\Generic\GenericIndex'
+    key: slug
+    storage:
+      class: 'Grav\Framework\Flex\Storage\FolderStorage'
+      options:
+        formatter:
+          class: 'Grav\Framework\File\Formatter\YamlFormatter'
+        folder: user-data://flex-objects/authors
+    search:
+      # Search options
+      options:
+        contains: 1
+      # Fields to be searched
+      fields:
+        - name
+        - role
+        - bio
+
+form:
+  validation: loose
+  fields:
+    tabs:
+      type: tabs
+      fields:
+        profile:
+          type: tab
+          title: Profil
+          fields:
+            slug:
+              type: text
+              label: Username/Slug
+              classes: fancy
+              help: "ID unik untuk author (contoh: rifat, fida, ocal)"
+              validate:
+                required: true
+                pattern: '^[a-z][a-z0-9]*$'
+                message: 'Slug harus huruf kecil tanpa spasi, dimulai dengan huruf'
+            name:
+              type: text
+              label: Nama Lengkap
+              classes: fancy
+              validate:
+                required: true
+            nickname:
+              type: text
+              label: Nama panggilan
+              classes: fancy
+              validate:
+                required: false	
+            role:
+              type: select
+              label: Peran
+              classes: fancy
+              options:
+                'Inisiator': 'Inisiator'
+                'Koordinator utama': 'Koordinator utama'
+                'Koordinator konten': 'Koordinator konten'
+                'Koordinator strategi': 'Koordinator strategi'
+                'Kontributor': 'Kontributor'
+              validate:
+                required: true
+            bio:
+              type: markdown
+              label: Bio
+              classes: fancy
+              validate:
+                required: true
+            avatar:
+              type: text
+              label: Avatar Filename
+              classes: fancy
+              help: "Nama file avatar (contoh: rifat.webp)"
+              placeholder: "nama-file.webp"
+        
+        social:
+          type: tab
+          title: Media Sosial
+          fields:
+            twitter:
+              type: text
+              label: Twitter/X Username
+              classes: fancy
+              help: "Username tanpa @"
+              placeholder: "rifatnajmi"
+            instagram:
+              type: text
+              label: Instagram Username
+              classes: fancy
+              help: "Username tanpa @"
+              placeholder: "rifatnajmi"
+            linkedin:
+              type: url
+              label: LinkedIn URL
+              classes: fancy
+              placeholder: "https://linkedin.com/in/rifatnajmi"
+            medium:
+              type: url
+              label: Medium URL
+              classes: fancy
+              placeholder: "https://medium.com/@rifatnajmi"
+            website:
+              type: url
+              label: Website URL
+              classes: fancy
+              placeholder: "https://rifatnajmi.com"
+            tiktok:
+              type: text
+              label: TikTok Username
+              classes: fancy
+              help: "Username tanpa @"
+              placeholder: "username"

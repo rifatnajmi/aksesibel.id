@@ -15,42 +15,41 @@
 				{{ page.title }}
 			</h1>
 			<p class="lead">{{ page.header.metadata.description }}</p>
+			<a href="https://aksesibel.id/bercerita" class="btn btn-yellow">Kirimkan ceritamu</a>
 		</header>
-		<section id="utama" class="post-content col-md-12">
-			<ul class="row list-unstyled blog-list">
-				{% set collection = page.collection() %}
-				{% for child in collection %}
-				<li class="col-md-6 col-lg-4 col-xl-3">
-					<a href="{{ child.url }}" class="card card-blog h-100">
-						{% if child.header.cover_image is iterable %}
-						{% set image_name = child.header.cover_image|keys|first %}
-						{% if child.media[image_name] %}
-						<img src="{{ child.media[image_name].cropZoom(800, 800).url }}" alt="" class="card-img-top" loading="lazy" />
-						{% else %}
-						<img src="{{ theme_url }}/images/placeholder.webp" alt="" class="card-img-top" loading="lazy" />
-						{% endif %}
-						{% endif %}
-						<article class="card-body d-flex justify-content-between">
-							<h2 class="h4">{{ child.title }}</h2>
-						</article>
-<!--
-						<div class="card-footer">
-							{% for category in child.header.taxonomy.category %}
-  <span class="badge">{{ category }}</span>
-{% endfor %}
-						</div>
--->
-					</a>
-				</li>
+		<hr class="my-4">
+<section id="utama" class="post-content col-md-12">
+	<ul class="row list-unstyled blog-list">
+		{% set collection = page.collection().order('date', 'desc') %}
+		{% for child in collection %}
+		<li class="col-md-6 col-lg-4 ">
+			<a href="{{ child.url }}" class="card card-blog h-100">
+				{% if child.header.cover_image is iterable %}
+				{% set image_name = child.header.cover_image|keys|first %}
+				{% if child.media[image_name] %}
+				<img src="{{ child.media[image_name].cropZoom(800, 800).url }}" alt="" class="card-img-top" loading="lazy" />
 				{% else %}
-				<p>No blog posts found.</p>
-				{% endfor %}
-			</ul>
-			{% if config.plugins.pagination.enabled and collection.params.pagination %}
-			{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
-			{% endif %}
-
-		</section>
+				<img src="{{ theme_url }}/images/placeholder.webp" alt="" class="card-img-top" loading="lazy" />
+				{% endif %}
+				{% endif %}
+				<article class="card-body d-flex justify-content-between">
+					<h2 class="h4">{{ child.title }}</h2>
+				</article>
+				<div class="card-footer">
+					{% for category in child.header.taxonomy.category %}
+<span class="badge mx-1">{{ category }}</span>
+{% endfor %}
+				</div>
+			</a>
+		</li>
+		{% else %}
+		<p>No blog posts found.</p>
+		{% endfor %}
+	</ul>
+	{% if config.plugins.pagination.enabled and collection.params.pagination %}
+	{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+	{% endif %}
+</section>
 	</article>
 </main>
 

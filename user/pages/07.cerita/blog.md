@@ -12,8 +12,7 @@ content:
         dir: desc
     pagination: true
 child_type: blog-item
-sitemap: null
 metadata:
-    description: 'Cerita teman disabilitas tentang hambatan yang sering mereka hadapi sehari-hari.'
+    description: 'Cerita teman disabilitas dan neurodivergen tentang hambatan yang sering mereka hadapi.'
 ---
 

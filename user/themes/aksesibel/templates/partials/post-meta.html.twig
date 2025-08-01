@@ -1,8 +1,8 @@
 <div class="row post-meta">
-	{% set authors_data = grav.config.get('authors') %}
+	{% set authors_flex = grav.get('flex').collection('authors') %}
 	{% set authors = page.header.authors is iterable ? page.header.authors : [page.header.authors] %}
+	
 	{% if authors and authors[0] is not empty %}
-
 	<dl class="col-md-6 my-0">
 		<dt>
 			<i class="fal fa-users" aria-hidden="true"></i><br>
@@ -10,29 +10,41 @@
 		</dt>
 		<dd>
 			<ol class="contributor-list list-inline">
-				{% for id in authors %}
-				{% set author = authors_data[id] ?? null %}
-				<li class="list-inline-item">
-					{% if author %}
-					<a href="{{ base_url }}/kontributor/#{{ id }}">{{ author.name }}</a>
-					{% else %}
-					{{ id }} (tidak ditemukan)
-					{% endif %}
-				</li>
+				{% for author_slug in authors %}
+					{# Loop search method - mencari author berdasarkan slug #}
+					{% set author = null %}
+					{% for flex_author in authors_flex %}
+						{% if flex_author.slug == author_slug %}
+							{% set author = flex_author %}
+						{% endif %}
+					{% endfor %}
+					
+					<li class="list-inline-item">
+						{% if author %}
+							<a href="{{ base_url }}/kontributor/#{{ author_slug }}">
+								{{ author.name }}
+							</a>
+						{% else %}
+							{{ author_slug }} (tidak ditemukan)
+						{% endif %}
+					</li>
 				{% endfor %}
 			</ol>
 		</dd>
 	</dl>
-	{% else %}
-
 	{% endif %}
-
+	
 	<dl class="col-md-6 my-0">
 		<dt>
 			<i class="fal fa-calendar" aria-hidden="true"></i><br>
-			Terakhir diperbarui:</dt>
+			Terakhir diperbarui:
+		</dt>
 		<dd>
-			{{ page.modified|date("d M Y") }}
+			{{ page.modified|date("d M Y")|replace({
+				'Jan': 'Jan', 'Feb': 'Feb', 'Mar': 'Mar', 'Apr': 'Apr',
+				'May': 'Mei', 'Jun': 'Jun', 'Jul': 'Jul', 'Aug': 'Agu',
+				'Sep': 'Sep', 'Oct': 'Okt', 'Nov': 'Nov', 'Dec': 'Des'
+			}) }}
 		</dd>
 	</dl>
 </div>

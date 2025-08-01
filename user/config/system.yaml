@@ -1,4 +1,4 @@
-absolute_urls: false
+absolute_urls: true
 timezone: null
 param_sep: ':'
 wrapped_site: false
@@ -138,7 +138,7 @@ assets:
   css_pipeline_before_excludes: true
   css_minify: true
   css_minify_windows: false
-  css_rewrite: true
+  css_rewrite: false
   js_pipeline: true
   js_pipeline_include_externals: false
   js_pipeline_before_excludes: true

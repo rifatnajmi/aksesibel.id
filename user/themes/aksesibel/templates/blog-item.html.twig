@@ -1,62 +1,65 @@
 {% extends 'partials/base.html.twig' %}
 {% block content %}
 {% include 'partials/sidebar.html.twig' %}
-<main class="col-lg-9 col-xl-6 min-vh-100">
-
-	<nav class="post-navigation justify-content-between mb-1" style="--bs-breadcrumb-divider: '/';" aria-label="Breadcrumb">
-		<ol class="breadcrumb breadcrumb-real">
-			<li class="breadcrumb-item"><a href="{{ base_url }}">Beranda</a></li>
-			<li class="breadcrumb-item"><a href="{{ base_url }}/cerita">Cerita</a></li>
-			<li class="breadcrumb-item visually-hidden" aria-current="page">{{ page.title }}</li>
-		</ol>
-	</nav>
-	<article class="row justify-content-center">
-		<header class="col-md-12">
-			<h1 class="post-title">
-				{{ page.title }}
-			</h1>
-			<p class="lead">{{ page.header.metadata.description }}</p>
-			{% include 'partials/post-meta2.html.twig' %}
-		</header>
-		<section id="utama" class="post-content col-md-12">
-			{% if page.header.cover_image is iterable %}
-			{% set image_name = page.header.cover_image|keys|first %}
-			{% if page.media[image_name] %}
-			<img src="{{ page.media[image_name].url }}" alt="{{ page.title }}" class="blog-cover mb-1 rounded" />
-			{% endif %}
-			{% endif %}
-			{{ page.content|markdown }}
-		</section>
-	</article>
-</main>
-<aside class="d-none d-xl-block col-xl-4 related">
-	<div class="sticky-top">
-		{% set all_posts = page.find('/cerita').children.visible %}
-		{% set other_posts = [] %}
-		{% for p in all_posts if p.route != page.route %}
-		{% set other_posts = other_posts|merge([p]) %}
-		{% endfor %}
-		{% set random_posts = other_posts|slice(0, other_posts|length)|sort|slice(0, 2) %}
-		<h2 class="h4 mb-1">Cerita Lain</h2>
-		<ul class="row list-unstyled">
-			{% for post in random_posts %}
-			<li class="col-md-6 mb-1">
-				<a href="{{ post.url }}" class="card card-blog">
-					{% if post.header.cover_image is iterable %}
-					{% set image_name = post.header.cover_image|keys|first %}
-					{% if post.media[image_name] %}
-					<img src="{{ post.media[image_name].cropZoom(800, 800).url }}" alt="" class="card-img-top" loading="lazy" />
-					{% else %}
-					<img src="{{ theme_url }}/images/placeholder.webp" alt="" class="card-img-top" loading="lazy" />
+<main class="col-lg-9 col-xl-10 min-vh-100">
+	<div class="row">
+		<div class="col-xl-8">
+			<nav class="post-navigation justify-content-between mb-1" style="--bs-breadcrumb-divider: '/';" aria-label="Breadcrumb">
+				<ol class="breadcrumb breadcrumb-real">
+					<li class="breadcrumb-item"><a href="{{ base_url }}">Beranda</a></li>
+					<li class="breadcrumb-item"><a href="{{ base_url }}/cerita">Cerita</a></li>
+					<li class="breadcrumb-item visually-hidden" aria-current="page">{{ page.title }}</li>
+				</ol>
+			</nav>
+			<article class="row justify-content-center">
+				<header class="col-md-12">
+					<h1 class="post-title">
+						{{ page.title }}
+					</h1>
+					<p class="lead">{{ page.header.metadata.description }}</p>
+					{% include 'partials/post-meta2.html.twig' %}
+				</header>
+				<section id="utama" class="post-content col-md-12">
+					{% if page.header.cover_image is iterable %}
+					{% set image_name = page.header.cover_image|keys|first %}
+					{% if page.media[image_name] %}
+					<img src="{{ page.media[image_name].url }}" alt="" class="blog-cover mb-1 rounded" />
 					{% endif %}
 					{% endif %}
-					<article class="card-body d-flex justify-content-between">
-						<h3 class="h4">{{ post.title }}</h3>
-					</article>
-				</a>
-			</li>
-			{% endfor %}
-		</ul>
+					{{ page.content|markdown }}
+				</section>
+			</article>
+		</div>
+		<div class="col-xl-4">
+			<div class="sticky-top">
+				{% set all_posts = page.find('/cerita').children %}
+				{% set other_posts = [] %}
+				{% for p in all_posts if p.route != page.route %}
+				{% set other_posts = other_posts|merge([p]) %}
+				{% endfor %}
+				{% set random_posts = other_posts|slice(random(0, other_posts|length - 2), 2) %}
+				<h2 class="h4 mb-1">Cerita Lain</h2>
+				<ul class="row list-unstyled blog-list">
+					{% for post in random_posts %}
+					<li class="col-6 col-xl-12 mb-1">
+						<a href="{{ post.url }}" class="card card-blog">
+							{% if post.header.cover_image is iterable %}
+							{% set image_name = post.header.cover_image|keys|first %}
+							{% if post.media[image_name] %}
+							<img src="{{ post.media[image_name].cropZoom(800, 800).url }}" alt="" class="card-img-top" loading="lazy" />
+							{% else %}
+							<img src="{{ theme_url }}/images/placeholder.webp" alt="" class="card-img-top" loading="lazy" />
+							{% endif %}
+							{% endif %}
+							<article class="card-body d-flex justify-content-between">
+								<h3 class="h5">{{ post.title }}</h3>
+							</article>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
 	</div>
-</aside>
+</main>
 {% endblock %}

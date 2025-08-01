@@ -16,7 +16,11 @@
 			<i class="fal fa-calendar" aria-hidden="true"></i><br>
 			Tanggal dikirim:</dt>
 		<dd>
-			{{ page.modified|date("d M Y") }}
+			{{ page.date|date("d M Y")|replace({
+    'Jan': 'Jan', 'Feb': 'Feb', 'Mar': 'Mar', 'Apr': 'Apr',
+    'May': 'Mei', 'Jun': 'Jun', 'Jul': 'Jul', 'Aug': 'Agu',
+    'Sep': 'Sep', 'Oct': 'Okt', 'Nov': 'Nov', 'Dec': 'Des'
+}) }}
 		</dd>
 	</dl>
 </div>

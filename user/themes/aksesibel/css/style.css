@@ -277,6 +277,8 @@ a:hover .card {background:var(--text-link-hover)}
 .card-blog .badge {background:var(--text); color:var(--body); font-weight:normal}
 
 .related {top: 4em}
+
+.blog-list a h3 {color:var(--text-link)}
 /*************************** CONTRIBUTORS ***************************/
 .card-contributor .card-body {margin:1em 0; padding:1em 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); font-size:.875em}
 .card-contributor h3 {font-size:1em; margin-bottom:0}

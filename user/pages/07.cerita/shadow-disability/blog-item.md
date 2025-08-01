@@ -1,12 +1,12 @@
 ---
 title: 'Shadow disability'
 published: true
-publish_date: '31-07-2025 17:23'
 visible: true
 cover_image: {  }
 taxonomy:
     category:
         - 'Borderline Personality Disorder'
+date: '31-07-2025 09:29'
 ---
 
 Saya adalah penyintas borderline personality disorder atau BPD. Perjalanan memperoleh diagnosa BPD cukup panjang dan melelahkan.
