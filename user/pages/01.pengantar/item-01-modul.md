@@ -2,7 +2,9 @@
 title: Pengantar
 metadata:
     description: 'Aksesibilitas bukan hanya soal disabilitas. Modul ini membahas makna akses dalam berbagai konteks untuk membangun kesadaran yang lebih luas.'
-authors: 'rifat,alya'
+authors:
+    - rifat
+    - alya
 ---
 
 Aksesibilitas seringkali diasosiasikan dengan disabilitas. [W3C](/glosarium#w3c), organisasi internasional yang mengembangkan standar web terbuka, [mendefinisikan](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what) aksesibilitas digital sebagai desain dan pengembangan situs web, perangkat, dan teknologi agar dapat digunakan oleh individu dengan disabilitas. Namun, definisi ini menurut kami sudah tidak lagi mencukupi. Hambatan terhadap akses digital tidak hanya dihadapi oleh individu dengan disabilitas, tapi juga oleh siapa pun yang mengalami keterbatasan situasional, teknologis, ekonomi, atau lingkungan.

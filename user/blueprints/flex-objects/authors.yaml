@@ -32,6 +32,7 @@ config:
       title: name
       fields:
         name:
+          link: true
         role:
         twitter:
         instagram:
@@ -123,7 +124,13 @@ form:
               label: Nama panggilan
               classes: fancy
               validate:
-                required: false	
+                required: false
+            citename:
+              type: text
+              label: Nama sitasi
+              classes: fancy
+              validate:
+                required: true	
             role:
               type: select
               label: Peran

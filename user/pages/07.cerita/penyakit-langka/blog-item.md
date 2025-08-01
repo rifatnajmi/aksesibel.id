@@ -24,7 +24,7 @@ Saya harus menemui 8 spesialis berbeda sebelum akhirnya mendapatkan diagnosis GB
 
 Untuk Polymyositis, gejalanya mirip saat saya terkena GBS/MFS. Beberapa dokter mencurigai GBS datang kembali walaupun saya yakin ini penyakit yang baru. Saya harus menemui 5 spesialis berbeda agar bisa mendapatkan diagnosis ini. Berbeda dengan GBS/MFS yang akut, Polymyositis bersifat kronis dan saya harus terapi seumur hidup.
 
-Selain kesulitan mendapatkan diagnosis, saya juga kesulitan soal biayanya. Limit asuransi saya habis dan saya harus menghabiskan tabungan untuk terapi selama 6 bulan untuk GBS/MFS, dan seumur hidup untuk Polymyositis. Saya juga harus membuat penyesuaian di rumah dan keseharian agar saya bisa mandiri. Minimal tidak merasakan sakit atau nyeri.
+Selain kesulitan mendapatkan diagnosis, saya juga kesulitan soal biayanya. Limit asuransi saya habis dan saya harus menghabiskan tabungan untuk terapi selama 6 bulan untuk GBS/MFS, dan seumur hidup untuk Polymyositis. Saya juga harus membuat penyesuaian di rumah dan keseharian agar saya bisa mandiri. Minimal, saya tidak merasakan sakit atau nyeri.
 
 Selain itu, saya harus menggunakan tongkat untuk membantu saya berjalan. [Seringkali orang melihat saya dengan rasa kasihan](https://www.instagram.com/p/DGmLTGryKUdGwF5gDynv0qvnDdezgc3qNd54uM0/?img_index=1). Namun, ada juga yang mengusir saya dari kursi prioritas MRT karena saya tidak terlihat berhak mendudukinya.
 

@@ -1,5 +1,5 @@
 title: Bagian
-'@extends': default
+'@extends': item-01-modul
 form:
   fields:
     tabs:
@@ -11,24 +11,3 @@ form:
             header.quiz_id:
               type: text
               label: Quiz ID
-            header.authors:
-              type: select
-              label: Kontributor
-              multiple: true
-              options:
-                rifat: Rifat Najmi
-                fida: Alfida Zahra Firdausi
-                alya: Alya Dhia Zahra
-                alfi: Alysia Alfi
-                anggun: Anggun Cahya Ningrum
-                silvi: Arianti Silvia
-                dian: Dian Anindya
-                fadhil: Fadhil Abdillah
-                keziah: Keziah Cahya Virdayanti
-                sekar: Madeleine Sekar Putri W
-                ocal: Muhammad Kautsar
-                sarai: Sarifadhilah Aziz
-                nadija: Nadija Herdwina
-              default: []
-              validate:
-                type: array

@@ -15,7 +15,7 @@
 		{% endfor %}
 		
 		{% if author and author.name %}
-		{% set author_names = author_names|merge([author.name]) %}
+		{% set author_names = author_names|merge([author.citename]) %}
 		{% else %}
 		{% set author_names = author_names|merge([author_slug ~ ' (tidak ditemukan)']) %}
 		{% endif %}
