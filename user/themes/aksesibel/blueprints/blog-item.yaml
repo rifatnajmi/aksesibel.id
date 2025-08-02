@@ -1,23 +1,18 @@
 title: Blog Post
 '@extends': default
-
 form:
   fields:
     tabs:
       type: tabs
       active: 1
-
       fields:
         content:
           type: tab
           title: Content
-
           fields:
-
             header.title:
               type: text
               label: Title
-
             header.slug:
               type: text
               label: Custom Slug
@@ -31,11 +26,32 @@ form:
                 - image/*
               multiple: false
               description: Pilih gambar cover untuk blog post ini
+            
+            header.contributor.name:
+              type: text
+              label: Nama Kontributor
+              placeholder: Masukkan nama kontributor
+            
+            header.contributor.bio:
+              type: markdown
+              label: Bio Kontributor
+              placeholder: Bio singkat kontributor (opsional)
+              description: Gunakan Markdown untuk formatting bio
 
+            header.contributor.phone:
+              type: text
+              label: Telepon Kontributor
+              placeholder: Masukkan telepon kontributor
+			  
+            header.contributor.email:
+              type: text
+              label: Email Kontributor
+              placeholder: Masukkan email kontributor
+			  
             content:
               type: markdown
               label: Content
-
+              
             header.process:
               type: fields
               label: Processing

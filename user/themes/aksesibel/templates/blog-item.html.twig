@@ -27,6 +27,12 @@
 					{% endif %}
 					{% endif %}
 					{{ page.content|markdown }}
+					{% if page.header.contributor.bio %}
+					<div class="contributor">
+						<h2 class="h4">Tentang {{ page.header.contributor.name }}</h2>
+						{{ page.header.contributor.bio|markdown }}
+					</div>
+					{% endif %}
 				</section>
 			</article>
 		</div>
@@ -41,7 +47,7 @@
 				<h2 class="h4 mb-1">Cerita Lain</h2>
 				<ul class="row list-unstyled blog-list">
 					{% for post in random_posts %}
-					<li class="col-6 col-xl-12 mb-1">
+					<li class="col-6 col-xl-12">
 						<a href="{{ post.url }}" class="card card-blog">
 							{% if post.header.cover_image is iterable %}
 							{% set image_name = post.header.cover_image|keys|first %}

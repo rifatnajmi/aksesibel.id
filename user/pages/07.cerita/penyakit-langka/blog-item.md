@@ -1,11 +1,5 @@
 ---
 title: 'Hidup dengan tiga penyakit langka'
-cover_image:
-    cover.webp:
-        name: cover.webp
-        type: image/webp
-        size: 84662
-        path: cover.webp
 visible: true
 taxonomy:
     category:
@@ -14,6 +8,16 @@ taxonomy:
         - Polymyositis
 published: true
 date: '31-07-2025 08:22'
+contributor:
+    name: Rifat
+    bio: 'Rifat adalah desainer produk dan profesional aksesibilitas bersertifikasi CPACC dari IAAP. Ia menginisiasi situs ini untuk meningkatkan kesadaran tentang hak disabilitas dan aksesibilitas digital. Sehari-hari ia bekerja di sebuah startup health-tech, dan di waktu luangnya ia merawat kura-kura serta berkebun.'
+    show: true
+cover_image:
+    cover.webp:
+        name: cover.webp
+        type: image/webp
+        size: 84662
+        path: cover.webp
 ---
 
 Saya adalah penyintas [Guillain-Barré syndrome (GBS) dan Miller Fisher syndrome (MFS)](https://rifatnajmi.com/id/journal/gbs), dua penyakit langka yang menyerang saraf tepi. Selain itu saya sedang berjuang menghadapi [Polymyositis](https://rifatnajmi.com/id/journal/pm), juga penyakit langka namun menyerang otot proksimal.
@@ -29,6 +33,3 @@ Selain kesulitan mendapatkan diagnosis, saya juga kesulitan soal biayanya. Limit
 Selain itu, saya harus menggunakan tongkat untuk membantu saya berjalan. [Seringkali orang melihat saya dengan rasa kasihan](https://www.instagram.com/p/DGmLTGryKUdGwF5gDynv0qvnDdezgc3qNd54uM0/?img_index=1). Namun, ada juga yang mengusir saya dari kursi prioritas MRT karena saya tidak terlihat berhak mendudukinya.
 
 Pengalaman ini menginspirasi saya untuk membuat [Aksesibel](/tentang): Agar orang-orang menyadari adanya hambatan dan sama-sama berjuang untuk akses yang setara.
-
-## Tentang Rifat
-Rifat adalah desainer produk dan profesional aksesibilitas bersertifikasi CPACC dari IAAP. Ia menginisiasi situs ini untuk meningkatkan kesadaran tentang hak disabilitas dan aksesibilitas digital. Sehari-hari ia bekerja di sebuah startup health-tech, dan di waktu luangnya ia merawat kura-kura serta berkebun.

@@ -285,6 +285,9 @@ a:hover .card {background:var(--text-link-hover)}
 .card-contributor .card-footer a {margin:.25em}
 .card-contributor img {max-width:128px; width:100%; height:auto;}
 
+.contributor {margin-top:2em; padding:1em; border-radius:.5em; border:1px solid var(--border)}
+.contributor p:last-child {margin-bottom:0}
+
 /*************************** FORM ***************************/
 .btn-yellow, .btn-primary {border:none}
 

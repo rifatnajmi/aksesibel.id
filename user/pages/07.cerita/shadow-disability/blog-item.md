@@ -7,6 +7,9 @@ taxonomy:
     category:
         - 'Borderline Personality Disorder'
 date: '31-07-2025 09:29'
+contributor:
+    name: Ari
+    show: false
 ---
 
 Saya adalah penyintas borderline personality disorder atau BPD. Perjalanan memperoleh diagnosa BPD cukup panjang dan melelahkan.
